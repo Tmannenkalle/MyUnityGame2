@@ -27,8 +27,16 @@ public class movement : MonoBehaviour
     {
         
         moveHorizontal = 0f;
-        if (Input.GetKey(left)) moveHorizontal = -1f;
-        if (Input.GetKey(right)) moveHorizontal = 1f;
+        if (Input.GetKey(left))
+        {
+           moveHorizontal = -1f;
+           transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+        } 
+        if (Input.GetKey(right))
+        {
+            moveHorizontal = 1f;
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        } 
         if (Input.GetKeyDown(up))
         {
             if (jumps > 0)
