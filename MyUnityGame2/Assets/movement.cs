@@ -18,24 +18,33 @@ public class movement : MonoBehaviour
     private bool isdashing;
     public int jumps = 1;
     public int maxjumps = 1;
+    public int health = 10;
+    public int maxhealth = 10;
+    public int losthealth = 0;
+    public float stamina = 100f;
+    public float maxstamina = 100f;
+
+    private SpriteRenderer sr;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+
     }
     void Update()
     {
-        
+        stamina += 1;
         moveHorizontal = 0f;
         if (Input.GetKey(left))
         {
            moveHorizontal = -1f;
-           transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+           sr.flipX = true;
         } 
         if (Input.GetKey(right))
         {
             moveHorizontal = 1f;
-            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            sr.flipX = false;
         } 
         if (Input.GetKeyDown(up))
         {
@@ -48,11 +57,12 @@ public class movement : MonoBehaviour
         }
         if (Input.GetKeyDown(dash))
         {
-            if (timer <= 0f)
+            if (timer <= 0f && stamina >= 50f)
             {
                 isdashing = true;
                 dashtime = maxdashtime;
                 timer = maxtimer;
+                stamina -= 50;
             }
         }
 
@@ -86,6 +96,14 @@ public class movement : MonoBehaviour
         if (collision.gameObject.CompareTag("ground"))
         {
             jumps = maxjumps;
+        }
+    }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("slime"))
+        {
+            health -= 1;
+            losthealth += 1;
         }
     }
 }
