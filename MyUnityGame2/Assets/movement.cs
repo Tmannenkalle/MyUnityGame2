@@ -13,16 +13,15 @@ public class movement : MonoBehaviour
     public KeyCode dash = KeyCode.LeftShift;
     private float dashtime = 0.2f;
     private float maxdashtime = 0.2f;
-    public float timer = 4.5f;
-    public float maxtimer = 4.5f;
+    public float timer = 0f;
     private bool isdashing;
     public int jumps = 1;
     public int maxjumps = 1;
     public int health = 10;
     public int maxhealth = 10;
     public int losthealth = 0;
-    public float stamina = 100f;
-    public float maxstamina = 100f;
+    public int stamina = 100;
+    public int maxstamina = 100;
 
     private SpriteRenderer sr;
 
@@ -34,7 +33,11 @@ public class movement : MonoBehaviour
     }
     void Update()
     {
-        stamina += 1;
+        if (stamina < maxstamina && timer > 0.15f)
+        {
+            stamina += 1;
+            timer = 0f;
+        }
         moveHorizontal = 0f;
         if (Input.GetKey(left))
         {
@@ -57,11 +60,10 @@ public class movement : MonoBehaviour
         }
         if (Input.GetKeyDown(dash))
         {
-            if (timer <= 0f && stamina >= 50f)
+            if (stamina >= 50f)
             {
                 isdashing = true;
                 dashtime = maxdashtime;
-                timer = maxtimer;
                 stamina -= 50;
             }
         }
@@ -76,7 +78,6 @@ public class movement : MonoBehaviour
             rb.linearVelocity = new Vector2(moveHorizontal * speed, rb.linearVelocity.y);
             if (dashtime <= 0f)
             {
-                timer = maxtimer;
                 isdashing = false;
             }
 
@@ -85,7 +86,7 @@ public class movement : MonoBehaviour
 
         else
         {
-            timer -= Time.fixedDeltaTime;
+            timer += Time.fixedDeltaTime;
             speed = mspeed;
             rb.linearVelocity = new Vector2(moveHorizontal * speed, rb.linearVelocity.y);
 
