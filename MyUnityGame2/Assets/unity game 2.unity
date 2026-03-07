@@ -9739,7 +9739,7 @@ Transform:
   m_GameObject: {fileID: 1394394475}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.36, y: -6.02, z: 0}
+  m_LocalPosition: {x: -2.356, y: -6.02, z: 0}
   m_LocalScale: {x: 50, y: 40, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11514,6 +11514,7 @@ GameObject:
   - component: {fileID: 1650495692}
   - component: {fileID: 1650495691}
   - component: {fileID: 1650495690}
+  - component: {fileID: 1650495693}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -11641,6 +11642,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1650495693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650495689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a22fce407b474510847660f7a9e6982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChestInteraction
+  spriterender: {fileID: 1650495691}
+  notOpenSprite: {fileID: 7316176786736914008, guid: cea4ac08bbc4445f9b8a5270aada4ac4, type: 3}
+  openSprite: {fileID: 0}
 --- !u!1 &1668287033
 GameObject:
   m_ObjectHideFlags: 0
