@@ -98,6 +98,10 @@ public class movement : MonoBehaviour
         {
             jumps = maxjumps;
         }
+        if (collision.gameObject.CompareTag("Untagged"))
+        {
+            jumps = maxjumps;
+        }
     }
     void OnTriggerEnter2D(Collider2D collision)
     {

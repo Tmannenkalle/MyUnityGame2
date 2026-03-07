@@ -3,11 +3,6 @@ using UnityEngine;
 public class health : MonoBehaviour
 {
     public movement move;
-    void Start()
-    {
-        move = GetComponentInParent<movement>();
-    }
-
     void Update()
     {
         transform.localScale = new Vector3(0.0921f * move.health, 0.6f, 1f);
