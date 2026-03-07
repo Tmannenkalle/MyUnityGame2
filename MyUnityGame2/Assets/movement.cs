@@ -22,6 +22,9 @@ public class movement : MonoBehaviour
     public int losthealth = 0;
     public int stamina = 100;
     public int maxstamina = 100;
+    bool iswalking;
+    [SerializeField] private Sprite jenspåtur;
+    [SerializeField] private Sprite jensikkepåtur;
 
     private SpriteRenderer sr;
 
@@ -41,12 +44,14 @@ public class movement : MonoBehaviour
         moveHorizontal = 0f;
         if (Input.GetKey(left))
         {
-           moveHorizontal = -1f;
-           sr.flipX = true;
+            moveHorizontal = -1f;
+            iswalking = true;
+            sr.flipX = true;
         } 
         if (Input.GetKey(right))
         {
             moveHorizontal = 1f;
+            iswalking = true;
             sr.flipX = false;
         } 
         if (Input.GetKeyDown(up))
@@ -67,7 +72,14 @@ public class movement : MonoBehaviour
                 stamina -= 50;
             }
         }
-
+        if (iswalking)
+        {
+            sr.sprite = jenspåtur;
+        }
+        else
+        {
+            sr.sprite = jensikkepåtur;
+        }
     }
     void FixedUpdate()
     {

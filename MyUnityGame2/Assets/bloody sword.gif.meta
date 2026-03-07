@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3a4149d3eb8ba482ca675feac1695659
+guid: db9ead66a0e32a645bc0eb24761e6a04
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2510476293373519475
-    second: New Piskel_0
+      213: 8028906911980638971
+    second: bloody sword_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: New Piskel_0
+      name: bloody sword_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 12
-        height: 13
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d899e6cbc1ff82dd0800000000000000
-      internalID: -2510476293373519475
+      spriteID: bf2d8472c486c6f60800000000000000
+      internalID: 8028906911980638971
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      New Piskel_0: -2510476293373519475
+      bloody sword_0: 8028906911980638971
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
