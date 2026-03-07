@@ -110,5 +110,10 @@ public class movement : MonoBehaviour
             health -= 1;
             losthealth += 1;
         }
+        else if (collision.gameObject.CompareTag("Bat"))
+        {
+            health -= 1;
+            losthealth += 1;
+        }
     }
 }
