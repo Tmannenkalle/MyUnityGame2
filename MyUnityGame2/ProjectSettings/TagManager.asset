@@ -5,10 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - ground
-  - slime
-  - Bat
   - chest
   - boing
+  - enemy
+  - god_text
   layers:
   - Default
   - TransparentFX

@@ -4,7 +4,7 @@ public class movement : MonoBehaviour
 {
     public float speed = 3f;
     public float mspeed = 3f;
-    public float jumppower = 1f;
+    public float jumppower = 1.05f;
     private float moveHorizontal;
     private Rigidbody2D rb;
     public KeyCode up = KeyCode.Space;
@@ -22,7 +22,9 @@ public class movement : MonoBehaviour
     public int losthealth = 0;
     public int stamina = 100;
     public int maxstamina = 100;
-    private bool boots = false;
+    public float bounceForce = 20f;
+    public int gtxt = 0;
+
     bool iswalking;
     [SerializeField] private Sprite jenspåtur1;
     [SerializeField] private Sprite jenspåtur2;
@@ -38,12 +40,7 @@ public class movement : MonoBehaviour
 
     }
     void Update()
-    {
-        if (boots)
-        {
-            speed = 4;
-        }
-        
+    {        
         if (stamina < maxstamina && timer > 0.15f)
         {
             stamina += 1;
@@ -66,10 +63,6 @@ public class movement : MonoBehaviour
         {
             if (jumps > 0)
             {
-                if (boots)
-                    jumppower = 1.25f;
-                else
-                    jumppower = 1f;
                 rb.AddForce(new Vector2(0f, jumppower), ForceMode2D.Impulse);
                 jumps -= 1;
             }
@@ -104,10 +97,7 @@ public class movement : MonoBehaviour
             {
                 isdashing = false;
             }
-
-
         }
-
         else
         {
             timer += Time.fixedDeltaTime;
@@ -120,8 +110,7 @@ public class movement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("ground"))
         {
-            jumps = maxjumps;
-            
+            jumps = maxjumps;            
         }
         if (collision.gameObject.CompareTag("Untagged"))
         {
@@ -129,21 +118,28 @@ public class movement : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("boing"))
         {
-            jumppower = 15f;
-            rb.AddForce(new Vector2(0f, jumppower), ForceMode2D.Impulse);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, bounceForce);
         }
+        if (collision.gameObject.CompareTag("god_text"))
+        {
+            jumps = 0;
+            gtxt = 2;
+            speed = 1f;
+        }
+
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("slime"))
+        if (collision.gameObject.CompareTag("enemy"))
         {
             health -= 1;
             losthealth += 1;
         }
-        else if (collision.gameObject.CompareTag("Bat"))
+        if (collision.gameObject.CompareTag("boots"))
         {
-            health -= 1;
-            losthealth += 1;
+            jumppower *= 1.2f;
+            speed = 6f;
+            mspeed = 6f;
         }
     }
 }
