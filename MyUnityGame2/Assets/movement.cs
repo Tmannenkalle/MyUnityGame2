@@ -41,7 +41,6 @@ public class movement : MonoBehaviour
     {
         if (boots)
         {
-            jumppower = 1.25f;
             speed = 4;
         }
         
@@ -67,6 +66,10 @@ public class movement : MonoBehaviour
         {
             if (jumps > 0)
             {
+                if (boots)
+                    jumppower = 1.25f;
+                else
+                    jumppower = 1f;
                 rb.AddForce(new Vector2(0f, jumppower), ForceMode2D.Impulse);
                 jumps -= 1;
             }
