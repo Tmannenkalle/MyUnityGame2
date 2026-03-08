@@ -22,8 +22,11 @@ public class movement : MonoBehaviour
     public int losthealth = 0;
     public int stamina = 100;
     public int maxstamina = 100;
+    private bool boots = false;
     bool iswalking;
-    [SerializeField] private Sprite jenspåtur;
+    [SerializeField] private Sprite jenspåtur1;
+    [SerializeField] private Sprite jenspåtur2;
+
     [SerializeField] private Sprite jensikkepåtur;
 
     private SpriteRenderer sr;
@@ -36,6 +39,12 @@ public class movement : MonoBehaviour
     }
     void Update()
     {
+        if (boots)
+        {
+            jumppower = 1.25f;
+            speed = 4;
+        }
+        
         if (stamina < maxstamina && timer > 0.15f)
         {
             stamina += 1;
@@ -74,7 +83,7 @@ public class movement : MonoBehaviour
         }
         if (iswalking)
         {
-            sr.sprite = jenspåtur;
+            sr.sprite = jenspåtur1;
         }
         else
         {
@@ -109,10 +118,16 @@ public class movement : MonoBehaviour
         if (collision.gameObject.CompareTag("ground"))
         {
             jumps = maxjumps;
+            
         }
         if (collision.gameObject.CompareTag("Untagged"))
         {
             jumps = maxjumps;
+        }
+        if (collision.gameObject.CompareTag("boing"))
+        {
+            jumppower = 15f;
+            rb.AddForce(new Vector2(0f, jumppower), ForceMode2D.Impulse);
         }
     }
     void OnTriggerEnter2D(Collider2D collision)

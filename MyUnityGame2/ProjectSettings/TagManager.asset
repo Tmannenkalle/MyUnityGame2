@@ -8,6 +8,7 @@ TagManager:
   - slime
   - Bat
   - chest
+  - boing
   layers:
   - Default
   - TransparentFX
