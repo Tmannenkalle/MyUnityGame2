@@ -10,6 +10,7 @@ TagManager:
   - enemy
   - god_text
   - light1
+  - wall
   layers:
   - Default
   - TransparentFX
