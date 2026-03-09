@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 {
-    public float speed = 3f;
-    public float mspeed = 3f;
-    public float jumppower = 1.05f;
+    public float speed = 5f;
+    public float mspeed = 5f;
+    public float jumppower = 8.5f;
     private float moveHorizontal;
     private Rigidbody2D rb;
     public KeyCode up = KeyCode.Space;
@@ -24,6 +24,7 @@ public class movement : MonoBehaviour
     public int maxstamina = 100;
     public float bounceForce = 20f;
     public int gtxt = 0;
+    public float gtxtime = 15f;
 
     bool iswalking;
     [SerializeField] private Sprite jenspåtur1;
@@ -105,6 +106,21 @@ public class movement : MonoBehaviour
             rb.linearVelocity = new Vector2(moveHorizontal * speed, rb.linearVelocity.y);
 
         }
+        if (gtxt > 0)
+            gtxtime -= Time.fixedDeltaTime;
+        if (gtxtime <= 0)
+        {
+            speed = 5f;
+            mspeed = 5f;
+            jumppower = 8.5f;
+        }
+        if (gtxtime <= -1)
+        {
+            gtxt = 0;
+            gtxtime = 15f;
+            mspeed *= 1.2f;
+            jumppower *= 1.2f;
+        }
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -124,7 +140,10 @@ public class movement : MonoBehaviour
         {
             jumps = 0;
             gtxt = 2;
-            speed = 1f;
+            speed = 0f;
+            mspeed = 0f;
+            mspeed *= 1.2f;
+            jumppower *= 1.2f;
         }
 
     }
@@ -134,12 +153,6 @@ public class movement : MonoBehaviour
         {
             health -= 1;
             losthealth += 1;
-        }
-        if (collision.gameObject.CompareTag("boots"))
-        {
-            jumppower *= 1.2f;
-            speed = 6f;
-            mspeed = 6f;
         }
     }
 }
