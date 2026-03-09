@@ -9,6 +9,7 @@ TagManager:
   - boing
   - enemy
   - god_text
+  - light1
   layers:
   - Default
   - TransparentFX

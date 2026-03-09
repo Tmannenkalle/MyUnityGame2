@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class movement : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class movement : MonoBehaviour
     public KeyCode left = KeyCode.A;
     public KeyCode right = KeyCode.D;
     public KeyCode dash = KeyCode.LeftShift;
+    public Light2D globalLight;
+    public float targetIntensity = 0.3f;
+    public float fadeSpeed = 1f;
     private float dashtime = 0.2f;
     private float maxdashtime = 0.2f;
     public float timer = 0f;
@@ -153,6 +157,10 @@ public class movement : MonoBehaviour
         {
             health -= 1;
             losthealth += 1;
+        }
+        if (collision.gameObject.CompareTag("light1"))
+        {
+            globalLight.intensity = Mathf.Lerp(globalLight.intensity, targetIntensity, Time.deltaTime * fadeSpeed);
         }
     }
 }
