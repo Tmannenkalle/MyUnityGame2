@@ -17756,6 +17756,8 @@ GameObject:
   - component: {fileID: 475941027}
   - component: {fileID: 475941026}
   - component: {fileID: 475941025}
+  - component: {fileID: 475941030}
+  - component: {fileID: 475941031}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -17793,13 +17795,10 @@ MonoBehaviour:
   losthealth: 0
   stamina: 100
   maxstamina: 100
-  bounceForce: 40
+  bounceForce: 38.1
   gtxt: 0
   gtxtime: 15
-  cavecount: 0
-  "jensp\xE5tur1": {fileID: -6888756438569675735, guid: cb9dd2000ab58ad4c9d848b888772d94, type: 3}
-  "jensp\xE5tur2": {fileID: -6888756438569675735, guid: cb9dd2000ab58ad4c9d848b888772d94, type: 3}
-  "jensikkep\xE5tur": {fileID: -6888756438569675735, guid: cb9dd2000ab58ad4c9d848b888772d94, type: 3}
+  sr: {fileID: 475941028}
 --- !u!61 &475941026
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17947,6 +17946,45 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!111 &475941030
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475941024}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: d71bb9a8b01d04a7ebb77b582be4ee0a, type: 2}
+  m_Animations:
+  - {fileID: 0}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
+--- !u!95 &475941031
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475941024}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &478350892
 GameObject:
   m_ObjectHideFlags: 0
@@ -35017,6 +35055,7 @@ GameObject:
   - component: {fileID: 964332594}
   - component: {fileID: 964332593}
   - component: {fileID: 964332592}
+  - component: {fileID: 964332595}
   m_Layer: 0
   m_Name: Square
   m_TagString: light
@@ -35144,6 +35183,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &964332595
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964332591}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 999f05c026b044ccaa83ceb955e18fb6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &971658590
 GameObject:
   m_ObjectHideFlags: 0

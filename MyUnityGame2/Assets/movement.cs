@@ -30,19 +30,17 @@ public class movement : MonoBehaviour
     public int gtxt = 0;
     public float gtxtime = 15f;
 
+    public SpriteRenderer sr;
+
     bool iswalking;
-    [SerializeField] private Sprite jenspåtur1;
-    [SerializeField] private Sprite jenspåtur2;
 
-    [SerializeField] private Sprite jensikkepåtur;
+    public 
 
-    private SpriteRenderer sr;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-
     }
     void Update()
     {        
@@ -84,11 +82,9 @@ public class movement : MonoBehaviour
         }
         if (iswalking)
         {
-            sr.sprite = jenspåtur1;
         }
         else
         {
-            sr.sprite = jensikkepåtur;
         }
     }
     void FixedUpdate()
