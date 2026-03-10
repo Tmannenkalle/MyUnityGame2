@@ -132,10 +132,6 @@ public class movement : MonoBehaviour
         {
             jumps = maxjumps;            
         }
-        if (collision.gameObject.CompareTag("Untagged"))
-        {
-            jumps = maxjumps;
-        }
         if (collision.gameObject.CompareTag("boing"))
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, bounceForce);
@@ -157,10 +153,6 @@ public class movement : MonoBehaviour
         {
             health -= 1;
             losthealth += 1;
-        }
-        if (collision.gameObject.CompareTag("light1"))
-        {
-            globalLight.intensity = Mathf.Lerp(globalLight.intensity, targetIntensity, Time.deltaTime * fadeSpeed);
         }
     }
 }
