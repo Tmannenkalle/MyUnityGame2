@@ -18056,6 +18056,7 @@ MonoBehaviour:
   speed: 5
   mspeed: 5
   jumppower: 8.5
+  is_jumping: 0
   up: 32
   left: 97
   right: 100

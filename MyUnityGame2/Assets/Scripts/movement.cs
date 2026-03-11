@@ -6,6 +6,7 @@ public class movement : MonoBehaviour
     public float speed = 5f;
     public float mspeed = 5f;
     public float jumppower = 8.5f;
+    public bool is_jumping;
     private float moveHorizontal;
     private Rigidbody2D rb;
     public KeyCode up = KeyCode.Space;
@@ -71,11 +72,15 @@ public class movement : MonoBehaviour
         }
         if (Input.GetKeyDown(up))
         {
+            
             if (jumps > 0)
             {
                 rb.AddForce(new Vector2(0f, jumppower), ForceMode2D.Impulse);
                 jumps -= 1;
+                is_jumping = true;
             }
+            
+            
               
         }
         if (Input.GetKeyDown(dash))
@@ -94,6 +99,14 @@ public class movement : MonoBehaviour
         else if(iswalking == false)
         {
             an.SetBool("IsWalking", false);
+        }
+        if (is_jumping)
+        {
+            an.SetBool("IsJumping", true);
+        }
+        else
+        {
+            an.SetBool("IsJumping", false);
         }
     }
     void FixedUpdate()
@@ -135,7 +148,8 @@ public class movement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("ground"))
         {
-            jumps = maxjumps;            
+            jumps = maxjumps;
+            is_jumping = false;            
         }
         if (collision.gameObject.CompareTag("boing"))
         {
