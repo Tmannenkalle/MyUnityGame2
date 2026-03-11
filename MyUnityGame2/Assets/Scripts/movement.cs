@@ -32,6 +32,8 @@ public class movement : MonoBehaviour
 
     public SpriteRenderer sr;
 
+    [SerializeField] private Animator an;
+
     bool iswalking;
 
     public 
@@ -41,6 +43,7 @@ public class movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        an = GetComponent<Animator>();
     }
     void Update()
     {        
@@ -56,12 +59,16 @@ public class movement : MonoBehaviour
             iswalking = true;
             sr.flipX = true;
         } 
-        if (Input.GetKey(right))
+        else if (Input.GetKey(right))
         {
             moveHorizontal = 1f;
             iswalking = true;
             sr.flipX = false;
-        } 
+        }
+        else
+        {
+            iswalking = false;
+        }
         if (Input.GetKeyDown(up))
         {
             if (jumps > 0)
@@ -82,9 +89,11 @@ public class movement : MonoBehaviour
         }
         if (iswalking)
         {
+            an.SetBool("IsWalking", true);
         }
-        else
+        else if(iswalking == false)
         {
+            an.SetBool("IsWalking", false);
         }
     }
     void FixedUpdate()
