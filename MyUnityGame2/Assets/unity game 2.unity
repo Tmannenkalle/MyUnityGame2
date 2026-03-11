@@ -1034,7 +1034,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.2
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -33406,7 +33406,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1628552195219188183, guid: 2a44e8e2b8501304ca7fce7da7568143, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -77507,8 +77507,5 @@ SceneRoots:
   - {fileID: 577804887}
   - {fileID: 15909411}
   - {fileID: 964332594}
-<<<<<<< HEAD
   - {fileID: 1518065803}
-=======
   - {fileID: 1965810150}
->>>>>>> e55f57ef528c0a4ebcf05b47a4da6f7400621e6e
