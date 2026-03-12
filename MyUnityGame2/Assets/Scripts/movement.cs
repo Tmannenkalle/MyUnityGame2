@@ -30,6 +30,7 @@ public class movement : MonoBehaviour
     public float bounceForce = 20f;
     public int gtxt = 0;
     public float gtxtime = 15f;
+    public bool hermesboots;
 
     public SpriteRenderer sr;
 
@@ -108,6 +109,10 @@ public class movement : MonoBehaviour
         {
             an.SetBool("IsJumping", false);
         }
+        if (hermesboots)
+        {
+            
+        }
     }
     void FixedUpdate()
     {
@@ -163,6 +168,7 @@ public class movement : MonoBehaviour
             mspeed = 0f;
             mspeed *= 1.2f;
             jumppower *= 1.2f;
+            hermesboots = true;
         }
 
     }

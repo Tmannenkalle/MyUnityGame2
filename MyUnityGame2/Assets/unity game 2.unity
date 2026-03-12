@@ -18441,6 +18441,7 @@ MonoBehaviour:
   bounceForce: 38.1
   gtxt: 0
   gtxtime: 15
+  hermesboots: 0
   sr: {fileID: 475941028}
   an: {fileID: 475941031}
 --- !u!61 &475941026
