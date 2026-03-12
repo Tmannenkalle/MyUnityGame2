@@ -11,6 +11,9 @@ TagManager:
   - god_text
   - light
   - miniboing
+  - Lwall
+  - Rwall
+  - Twall
   layers:
   - Default
   - TransparentFX

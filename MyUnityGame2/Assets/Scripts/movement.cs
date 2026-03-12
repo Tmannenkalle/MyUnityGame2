@@ -32,11 +32,13 @@ public class movement : MonoBehaviour
     public int gtxt = 0;
     public float gtxtime = 15f;
     public bool hermesboots;
+    public Light2D gl;
+    public float dftime = 0.2f;
+    private bool df = false;
 
     public SpriteRenderer sr;
 
     [SerializeField] private Animator an;
-
     bool iswalking;
 
     public 
@@ -47,6 +49,8 @@ public class movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         an = GetComponent<Animator>();
+        if (gl == null)
+            gl = GetComponent<Light2D>();
     }
     void Update()
     {        
@@ -94,6 +98,12 @@ public class movement : MonoBehaviour
                 stamina -= 50;
             }
         }
+        if (health <= 0)
+        {
+            health = 10;
+            losthealth = 0;
+            transform.localPosition = new Vector3(0f,0f,0f);
+        }
         if (iswalking)
         {
             an.SetBool("IsWalking", true);
@@ -110,10 +120,7 @@ public class movement : MonoBehaviour
         {
             an.SetBool("IsJumping", false);
         }
-        if (hermesboots)
-        {
-            
-        }
+
     }
     void FixedUpdate()
     {
@@ -149,10 +156,36 @@ public class movement : MonoBehaviour
             mspeed *= 1.2f;
             jumppower *= 1.2f;
         }
+        if (df)
+        {
+            gl.color = Color.red;
+            dftime -= Time.fixedDeltaTime;
+            if (dftime <= 0f)
+            {
+               gl.color = Color.white; 
+               dftime = 0.2f;
+               df = false;
+            }
+        }
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("ground"))
+        {
+            jumps = maxjumps;
+            is_jumping = false;            
+        }
+        if (collision.gameObject.CompareTag("Twall"))
+        {
+            jumps = maxjumps;
+            is_jumping = false;            
+        }
+        if (collision.gameObject.CompareTag("Rwall"))
+        {
+            jumps = maxjumps;
+            is_jumping = false;            
+        }
+        if (collision.gameObject.CompareTag("Lwall"))
         {
             jumps = maxjumps;
             is_jumping = false;            
@@ -181,6 +214,7 @@ public class movement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("enemy"))
         {
+            df = true;
             health -= 1;
             losthealth += 1;
         }
