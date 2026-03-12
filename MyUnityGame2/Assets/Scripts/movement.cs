@@ -28,6 +28,7 @@ public class movement : MonoBehaviour
     public int stamina = 100;
     public int maxstamina = 100;
     public float bounceForce = 20f;
+    public float minibounceForce = 5f;
     public int gtxt = 0;
     public float gtxtime = 15f;
     public bool hermesboots;
@@ -159,6 +160,10 @@ public class movement : MonoBehaviour
         if (collision.gameObject.CompareTag("boing"))
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, bounceForce);
+        }
+        if (collision.gameObject.CompareTag("miniboing"))
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, minibounceForce);
         }
         if (collision.gameObject.CompareTag("god_text"))
         {
