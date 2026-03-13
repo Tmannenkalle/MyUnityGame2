@@ -54,7 +54,7 @@ public class movement : MonoBehaviour
     }
     void Update()
     {        
-        if (stamina < maxstamina && timer > 0.15f)
+        if (stamina < maxstamina && timer > 0.075f)
         {
             stamina += 1;
             timer = 0f;
