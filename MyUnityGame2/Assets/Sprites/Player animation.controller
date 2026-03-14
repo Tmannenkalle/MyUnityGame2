@@ -268,7 +268,7 @@ AnimatorState:
   m_PrefabAsset: {fileID: 0}
   m_Name: jump animation
   m_Speed: 0.25
-  m_CycleOffset: 1
+  m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5785251845225127785}
   - {fileID: -650681746857500582}
