@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.IO.Pipes;
 using Microsoft.VisualBasic;
+using System.Collections;
 
 public class InteractionNpc : MonoBehaviour, IInteractable
 {
@@ -24,22 +25,62 @@ public class InteractionNpc : MonoBehaviour, IInteractable
         }
         if (isDialogeActive)
         {
-            
+            NextLine();
         }
         else
         {
-            
+            StartDialoge();
         }
-    }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+        void StartDialoge()
+        {
+            isDialogeActive = true;
+            dialogeIndex = 0;
 
-    // Update is called once per frame
-    void Update()
+            nameText.SetText(dialogueData.npcNavn);
+            dialoguePanel.SetActive(true);
+            StartCoroutine(TypeLine());
+            }
+            void NextLine()
+        {
+            if(isTyping)
+            {
+                StopAllCoroutines();
+                dialougetext.SetText(dialogueData.dialogeLines[dialogeIndex]);
+                isTyping = false;
+            }
+            else if(++dialogeIndex < dialogueData.dialogeLines.Length)
+            {
+                StartCoroutine(TypeLine());
+            }
+            else
+            {
+                EndDialoge();
+            }
+        }
+        IEnumerator TypeLine()
+        {
+            isTyping = true;
+            dialougetext.SetText("");
+
+            foreach(char letter in dialogueData.dialogeLines[dialogeIndex])
+            {
+                dialougetext.text += letter;
+                yield return new WaitForSeconds(dialogueData.typingSpeed);
+            }
+            isTyping = false;
+
+            if(dialogueData. autodialogelines.Length > dialogeIndex && dialogueData.autodialogelines[dialogeIndex])
+            {
+                yield return new WaitForSeconds(dialogueData.autodialogelinesdelay);
+                NextLine();
+            }
+        }
+            }
+    public void EndDialoge()
     {
-        
+        StopAllCoroutines();
+        isDialogeActive = false;
+        dialougetext.SetText("");
+        dialoguePanel.SetActive(false);
     }
 }

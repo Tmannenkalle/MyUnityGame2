@@ -75523,7 +75523,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1821777746}
   - component: {fileID: 1821777745}
-  - component: {fileID: 1821777744}
+  - component: {fileID: 1821777748}
+  - component: {fileID: 1821777747}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -75531,24 +75532,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1821777744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1821777743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e81d32ced93ed40968e436041434081a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Interaction
-  npcNavn: Kul fyr
-  dialogeLines:
-  - Hey man! long time no see.
-  typingSpeed: 0.4
-  autodialogelines: 00
-  autodialogelinesdelay: 0.4
 --- !u!212 &1821777745
 SpriteRenderer:
   serializedVersion: 2
@@ -75623,6 +75606,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1821777747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821777743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81d32ced93ed40968e436041434081a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interaction
+  npcNavn: Per
+  dialogeLines:
+  - Hei
+  typingSpeed: 0.4
+  autodialogelines: 00
+  autodialogelinesdelay: 0.4
+--- !u!114 &1821777748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821777743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d166569aafbf741da8044e50f81aa6fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionNpc
+  dialogueData: {fileID: 1821777747}
+  dialoguePanel: {fileID: 0}
+  dialougetext: {fileID: 0}
+  nameText: {fileID: 0}
 --- !u!1 &1823414998
 GameObject:
   m_ObjectHideFlags: 0
