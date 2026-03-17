@@ -3,7 +3,8 @@ using TMPro;
 
 public class InteractionNpc : MonoBehaviour
 {
-    public NPCDialogue dialogueData;
+    //må gjøre dette for å fikse error, bytt det tilbake når du må
+    //public NPCDialogue dialogueData;
     public GameObject dialoguePanel;
     public TMP_Text dialougetext, nameText;
     private int dialogeIndex;

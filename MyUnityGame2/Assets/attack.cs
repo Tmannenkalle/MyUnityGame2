@@ -3,27 +3,40 @@ using UnityEngine;
 public class attack : MonoBehaviour
 {
     public Transform player;
-    public float atktime = 0.2f;
+    public float atktime = 0.15f;
     public float cooldown = 1.5f;
+    public movement move;
+    public SpriteRenderer srs;
+    Vector3 offset = new Vector3(1.25f, 0f, 0f);
     void Start()
     {
-        
     }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && cooldown <= 0f)
         {
-            transform.localScale = new Vector3(13, 11, 1);
-            atktime = 0.2f;
+            atktime = 0.15f;
             cooldown = 1.5f;
-        }
-        transform.position = player.position;
+            if (move.sr.flipX)
+            {
+                transform.localScale = new Vector3(-3, 4, 1);
+                offset = new Vector3(-1.5f, 0f, 0f); 
+                srs.flipX = true;
+            }
+            else
+            {
+                offset = new Vector3(1.25f, 0f, 0f);
+                transform.localScale = new Vector3(3, 4, 1);
+                srs.flipX = false;
+            }
+        }  
+        transform.position = player.position + offset;
     }
     void FixedUpdate()
     {
         if (atktime <= 0f)
-            transform.localScale = new Vector3(0, 11, 1);
+            transform.localScale = new Vector3(0, 4, 1);
 
         atktime -= Time.fixedDeltaTime;
         cooldown -= Time.fixedDeltaTime;
