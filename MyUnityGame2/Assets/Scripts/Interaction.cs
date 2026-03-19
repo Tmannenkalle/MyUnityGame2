@@ -1,9 +1,7 @@
-using System.IO.Enumeration;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 [CreateAssetMenu(fileName ="Newnpcdialoge", menuName = "npc dialoge")]
-public class Interaction : MonoBehaviour
+public class Interaction : ScriptableObject
 {
     public string npcNavn;
     public string[] dialogeLines;

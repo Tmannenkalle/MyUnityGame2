@@ -12,6 +12,14 @@ public class InteractionNpc : MonoBehaviour, IInteractable
     public TMP_Text dialougetext, nameText;
     private int dialogeIndex;
     private bool isTyping, isDialogeActive;
+    public GameObject Button;
+    void Start()
+    {
+        dialoguePanel.SetActive(false);
+        dialougetext.SetText("");
+        nameText.SetText("");
+    }
+
 
     public bool CanInteract()
     {
@@ -35,6 +43,7 @@ public class InteractionNpc : MonoBehaviour, IInteractable
         {
             isDialogeActive = true;
             dialogeIndex = 0;
+            Button.SetActive(true);
 
             nameText.SetText(dialogueData.npcNavn);
             dialoguePanel.SetActive(true);
@@ -81,6 +90,8 @@ public class InteractionNpc : MonoBehaviour, IInteractable
         StopAllCoroutines();
         isDialogeActive = false;
         dialougetext.SetText("");
+        nameText.SetText("");
+        Button.SetActive(false);
         dialoguePanel.SetActive(false);
     }
 }

@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Interactbledetector : MonoBehaviour
 {
-    private IInteractable interactableInRange = null;
-    private GameObject interactionIcon;
-    private KeyCode E = KeyCode.E;
+    [SerializeField]private IInteractable interactableInRange = null;
+    [SerializeField]private GameObject interactionIcon;
+    [SerializeField]private KeyCode E = KeyCode.E;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -13,8 +13,6 @@ public class Interactbledetector : MonoBehaviour
 
     public void OnInteract()
     {
-        if(Input.GetKey(E)){
-        interactableInRange?.Interact();}
     }
 
     // Update is called once per frame
@@ -33,5 +31,10 @@ public class Interactbledetector : MonoBehaviour
             interactableInRange = null;
             interactionIcon.SetActive(false);
         }
+    }
+    void Update()
+    {
+        if(Input.GetKeyDown(E)){
+        interactableInRange?.Interact();}
     }
 }
