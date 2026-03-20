@@ -18,6 +18,7 @@ public class InteractionNpc : MonoBehaviour, IInteractable
         dialoguePanel.SetActive(false);
         dialougetext.SetText("");
         nameText.SetText("");
+        Button.SetActive(false);
     }
 
 

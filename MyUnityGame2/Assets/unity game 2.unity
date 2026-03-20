@@ -21111,12 +21111,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475941024}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -3.25, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 572304490}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!111 &475941030
@@ -24990,13 +24989,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 572304489}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -3.25, z: 0}
+  m_LocalScale: {x: 8, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 136162195}
-  m_Father: {fileID: 475941029}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &572304492
 CircleCollider2D:
@@ -25046,6 +25045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac92c58ee80b0426d848728b692434b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactbledetector
+  Player: {fileID: 475941029}
   interactionIcon: {fileID: 136162194}
   E: 101
 --- !u!1 &574157220
@@ -43379,6 +43379,7 @@ MonoBehaviour:
   cooldown: 1.5
   move: {fileID: 475941025}
   srs: {fileID: 1005528856}
+  an: {fileID: 0}
 --- !u!212 &1005528856
 SpriteRenderer:
   serializedVersion: 2
@@ -89314,7 +89315,6 @@ SceneRoots:
   - {fileID: 577804887}
   - {fileID: 480698725}
   - {fileID: 1635626606}
-  - {fileID: 475941029}
   - {fileID: 395613971}
   - {fileID: 1341223835}
   - {fileID: 1509124023}
@@ -89325,3 +89325,5 @@ SceneRoots:
   - {fileID: 1005528853}
   - {fileID: 1563144886}
   - {fileID: 746259252}
+  - {fileID: 572304490}
+  - {fileID: 475941029}

@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class Interactbledetector : MonoBehaviour
 {
+    public Transform Player;
     [SerializeField]private IInteractable interactableInRange = null;
     [SerializeField]private GameObject interactionIcon;
     [SerializeField]private KeyCode E = KeyCode.E;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         interactionIcon.SetActive(false);
@@ -36,5 +37,6 @@ public class Interactbledetector : MonoBehaviour
     {
         if(Input.GetKeyDown(E)){
         interactableInRange?.Interact();}
+        transform.position = Player.position;
     }
 }

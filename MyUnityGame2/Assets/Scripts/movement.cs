@@ -120,6 +120,14 @@ public class movement : MonoBehaviour
         {
             an.SetBool("IsJumping", false);
         }
+        if (isatack)
+        {
+            an.SetBool("Isatacking", true);
+        }
+        else
+        {
+            an.SetBool("Isatacking", false);
+        }
 
     }
     void FixedUpdate()

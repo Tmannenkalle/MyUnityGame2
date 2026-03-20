@@ -7,10 +7,10 @@ public class attack : MonoBehaviour
     public float cooldown = 1.5f;
     public movement move;
     public SpriteRenderer srs;
+    public bool isatack;
     Vector3 offset = new Vector3(1.25f, 0f, 0f);
     void Start()
-    {
-    }
+    {}
 
     void Update()
     {
