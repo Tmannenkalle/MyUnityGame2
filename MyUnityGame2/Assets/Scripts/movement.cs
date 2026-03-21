@@ -35,6 +35,7 @@ public class movement : MonoBehaviour
     public Light2D gl;
     public float dftime = 0.2f;
     private bool df = false;
+    public attack att;
 
     public SpriteRenderer sr;
     public int coins = 0;
@@ -50,6 +51,7 @@ public class movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         an = GetComponent<Animator>();
+        att = FindObjectOfType<attack>();
         if (gl == null)
             gl = GetComponent<Light2D>();
     }
@@ -121,15 +123,15 @@ public class movement : MonoBehaviour
         {
             an.SetBool("IsJumping", false);
         }
-        /*if (isaatacking)
+        if (att.isatack)
         {
+            Debug.Log(att);
             an.SetBool("Isatacking", true);
         }
         else
         {
             an.SetBool("Isatacking", false);
         }
-        */
     }
     void FixedUpdate()
     {

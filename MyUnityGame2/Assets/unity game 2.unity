@@ -20938,6 +20938,7 @@ MonoBehaviour:
   hermesboots: 0
   gl: {fileID: 15909410}
   dftime: 0.2
+  att: {fileID: 1005528855}
   sr: {fileID: 475941028}
   coins: 0
   an: {fileID: 475941031}
@@ -43351,6 +43352,7 @@ MonoBehaviour:
   move: {fileID: 475941025}
   srs: {fileID: 1005528856}
   isatack: 0
+  isatacktimer: 0
 --- !u!212 &1005528856
 SpriteRenderer:
   serializedVersion: 2

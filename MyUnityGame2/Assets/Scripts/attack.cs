@@ -9,6 +9,7 @@ public class attack : MonoBehaviour
     public SpriteRenderer srs;
     public bool isatack;
     Vector3 offset = new Vector3(1.25f, 0f, 0f);
+    public float isatacktimer;
     void Start()
     {}
 
@@ -16,8 +17,10 @@ public class attack : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && cooldown <= 0f)
         {
+            isatack = true;
             atktime = 0.15f;
             cooldown = 1.5f;
+            isatacktimer = 0.5f;
             if (move.sr.flipX)
             {
                 transform.localScale = new Vector3(-3, 4, 1);
@@ -40,5 +43,10 @@ public class attack : MonoBehaviour
 
         atktime -= Time.fixedDeltaTime;
         cooldown -= Time.fixedDeltaTime;
+        isatacktimer -= Time.fixedDeltaTime;
+        if (isatacktimer <= 0f)
+        {
+            isatack = false;
+        }
     }
 }
