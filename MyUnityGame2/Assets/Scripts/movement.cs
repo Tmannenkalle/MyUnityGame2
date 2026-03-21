@@ -36,6 +36,8 @@ public class movement : MonoBehaviour
     public float dftime = 0.2f;
     private bool df = false;
     public attack att;
+    public Sprite jump;
+    public Sprite normal;
 
     public SpriteRenderer sr;
     public int coins = 0;
@@ -84,9 +86,9 @@ public class movement : MonoBehaviour
             
             if (jumps > 0)
             {
+                is_jumping = true;
                 rb.AddForce(new Vector2(0f, jumppower), ForceMode2D.Impulse);
                 jumps -= 1;
-                is_jumping = true;
             }
             
             
@@ -117,11 +119,11 @@ public class movement : MonoBehaviour
         }
         if (is_jumping)
         {
-            an.SetBool("IsJumping", true);
+            sr.sprite = jump;
         }
         else
         {
-            an.SetBool("IsJumping", false);
+            sr.sprite = normal;
         }
         if (att.isatack)
         {
