@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-guid: b608e03ea10b3a340aaa9bdf200162eb
+guid: ed151a848307d49238b4d1b58c1953d9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3275028520990625885
-    second: New Piskel (8)_0
+      213: -15222188346383433
+    second: Sword animation-2_0
   - first:
-      213: 3150403194116108143
-    second: New Piskel (8)_1
+      213: -8818122276791146137
+    second: Sword animation-2_1
   - first:
-      213: -4072501624859464931
-    second: New Piskel (8)_2
-  - first:
-      213: 2977839672645786193
-    second: New Piskel (8)_3
-  - first:
-      213: -7444346396056899991
-    second: New Piskel (8)_4
+      213: 2700802495184580476
+    second: Sword animation-2_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -112,111 +106,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: New Piskel (8)_0
+      name: Sword animation-2_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 153
-        width: 71
-        height: 94
+        x: 1
+        y: 39
+        width: 17
+        height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d505be6861d337d20800000000000000
-      internalID: 3275028520990625885
+      spriteID: 7b3e8e6108be9cff0800000000000000
+      internalID: -15222188346383433
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel (8)_1
+      name: Sword animation-2_1
       rect:
         serializedVersion: 2
-        x: 131
-        y: 153
-        width: 96
-        height: 79
+        x: 33
+        y: 39
+        width: 23
+        height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f6feb84730b78bb20800000000000000
-      internalID: 3150403194116108143
+      spriteID: 769a7e9728cbf9580800000000000000
+      internalID: -8818122276791146137
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel (8)_2
+      name: Sword animation-2_2
       rect:
         serializedVersion: 2
-        x: 228
-        y: 194
+        x: 1
+        y: 7
         width: 28
-        height: 52
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d1bec0769519b77c0800000000000000
-      internalID: -4072501624859464931
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: New Piskel (8)_3
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 26
-        width: 116
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 15a1e1ea769635920800000000000000
-      internalID: 2977839672645786193
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: New Piskel (8)_4
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 9
-        width: 29
-        height: 109
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 96ea116056e50b890800000000000000
-      internalID: -7444346396056899991
+      spriteID: c7f27f55f8d2b7520800000000000000
+      internalID: 2700802495184580476
       vertices: []
       indices: 
       edges: []
@@ -225,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 3b2268ea5a45a4919bc80b13246ad184
     internalID: 0
     vertices: []
     indices: 
@@ -233,13 +183,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      New Piskel (8)_0: 3275028520990625885
-      New Piskel (8)_1: 3150403194116108143
-      New Piskel (8)_2: -4072501624859464931
-      New Piskel (8)_3: 2977839672645786193
-      New Piskel (8)_4: -7444346396056899991
+      Sword animation-2_0: -15222188346383433
+      Sword animation-2_1: -8818122276791146137
+      Sword animation-2_2: 2700802495184580476
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
