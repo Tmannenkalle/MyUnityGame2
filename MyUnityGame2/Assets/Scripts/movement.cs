@@ -37,11 +37,12 @@ public class movement : MonoBehaviour
     private bool df = false;
 
     public SpriteRenderer sr;
+    public int coins = 0;
 
     [SerializeField] private Animator an;
     bool iswalking;
 
-    public 
+    public int coinsoptimization = 0;
 
 
     void Start()
@@ -120,7 +121,7 @@ public class movement : MonoBehaviour
         {
             an.SetBool("IsJumping", false);
         }
-        if (isatack)
+        /*if (isaatacking)
         {
             an.SetBool("Isatacking", true);
         }
@@ -128,7 +129,7 @@ public class movement : MonoBehaviour
         {
             an.SetBool("Isatacking", false);
         }
-
+        */
     }
     void FixedUpdate()
     {
@@ -225,6 +226,11 @@ public class movement : MonoBehaviour
             df = true;
             health -= 1;
             losthealth += 1;
+        }
+        if (collision.gameObject.CompareTag("coin"))
+        {
+            coins += 1;
+            Destroy(collision.gameObject);
         }
     }
 }
