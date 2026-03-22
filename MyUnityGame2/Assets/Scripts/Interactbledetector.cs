@@ -6,6 +6,7 @@ public class Interactbledetector : MonoBehaviour
     [SerializeField]private IInteractable interactableInRange = null;
     [SerializeField]private GameObject interactionIcon;
     [SerializeField]private KeyCode E = KeyCode.E;
+    private Vector3 higher = new Vector3(0, 1, 0);
         // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -38,5 +39,6 @@ public class Interactbledetector : MonoBehaviour
         if(Input.GetKeyDown(E)){
         interactableInRange?.Interact();}
         transform.position = Player.position;
+
     }
 }

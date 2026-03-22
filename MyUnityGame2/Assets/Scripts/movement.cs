@@ -119,15 +119,14 @@ public class movement : MonoBehaviour
         }
         if (is_jumping)
         {
-            sr.sprite = jump;
+            an.SetBool("IsJumping", true);
         }
-        else
+        else if (is_jumping == false)
         {
-            sr.sprite = normal;
+           an.SetBool("IsJumping", false);
         }
         if (att.isatack)
         {
-            Debug.Log(att);
             an.SetBool("Isatacking", true);
         }
         else
