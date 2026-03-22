@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81d32ced93ed40968e436041434081a, type: 3}
+  m_Name: Hei
+  m_EditorClassIdentifier: Assembly-CSharp::Interaction
+  npcNavn: Npc
+  dialogeLines:
+  - Hi thought you were not alive
+  - You were sent to the jungle by the king
+  typingSpeed: 0.1
+  autodialogelines: 0100
+  autodialogelinesdelay: 0.4
