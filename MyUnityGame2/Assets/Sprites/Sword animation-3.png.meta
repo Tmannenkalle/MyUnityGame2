@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 26864fd9d29f24b5381657e591019141
+guid: 5ee648dfdc18f4e42b9a3cbfbc23dba3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6900723555853512227
-    second: Sword animation-2-2_0
+      213: -7751302643761306179
+    second: Sword animation-3_0
   - first:
-      213: -5612092350454220625
-    second: Sword animation-2-2_1
+      213: 2159042793364781056
+    second: Sword animation-3_1
   - first:
-      213: -3006650670766205607
-    second: Sword animation-2-2_2
+      213: 2310070825697725543
+    second: Sword animation-3_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,67 +106,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sword animation-2-2_0
+      name: Sword animation-3_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 40
-        width: 17
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.46932516, y: 0.5238582}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 32ea1df238b44cf50800000000000000
-      internalID: 6900723555853512227
+      spriteID: db5af0c4057dd6490800000000000000
+      internalID: -7751302643761306179
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sword animation-2-2_1
+      name: Sword animation-3_1
       rect:
         serializedVersion: 2
-        x: 40
-        y: 40
-        width: 23
-        height: 19
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.46932518, y: 0.5204499}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fa83d7ccdb7dd12b0800000000000000
-      internalID: -5612092350454220625
+      spriteID: 008ff514bf576fd10800000000000000
+      internalID: 2159042793364781056
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sword animation-2-2_2
+      name: Sword animation-3_2
       rect:
         serializedVersion: 2
-        x: 8
-        y: 8
-        width: 28
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.4659168, y: 0.5170416}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9555a45152b3646d0800000000000000
-      internalID: -3006650670766205607
+      spriteID: 76cc4bb3d250f0020800000000000000
+      internalID: 2310070825697725543
       vertices: []
       indices: 
       edges: []
@@ -175,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3e02d0c6de45b4bcaac256cca6ebaff0
+    spriteID: 4360d0c00fef14bd693deb4da66d3ed4
     internalID: 0
     vertices: []
     indices: 
@@ -185,11 +185,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Sword animation-2-2_0: 6900723555853512227
-      Sword animation-2-2_1: -5612092350454220625
-      Sword animation-2-2_2: -3006650670766205607
+      Sword animation-3_0: -7751302643761306179
+      Sword animation-3_1: 2159042793364781056
+      Sword animation-3_2: 2310070825697725543
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
