@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81d32ced93ed40968e436041434081a, type: 3}
   m_Name: Snille per
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
-  npcNavn: 
-  dialogeLines: []
-  typingSpeed: 0.4
-  autodialogelines: 
-  autodialogelinesdelay: 0.4
+  npcNavn: Snille per
+  dialogeLines:
+  - Hei
+  - Hallo
+  - "hvordan g\xE5r det?"
+  typingSpeed: 0.1
+  autodialogelines: 010100
+  autodialogelinesdelay: 0.2
