@@ -48,6 +48,11 @@ public class movement : MonoBehaviour
 
     public GameObject wait;
 
+    public GameObject staminabar;
+
+    public GameObject life;
+
+    public GameObject coin;
     public KeyCode doorEnter = KeyCode.W;
     [SerializeField] private Animator an;
     bool iswalking;
@@ -72,6 +77,9 @@ public class movement : MonoBehaviour
         if (closeToDoor && Input.GetKeyDown(doorEnter))
         {
             wait.SetActive(true);
+            life.SetActive(false);
+            staminabar.SetActive(false);
+            coin.SetActive(false);
             timerForWait = 1.5f;
             transform.position = new Vector3(10f, -50f, 0f);
         }    
@@ -152,6 +160,9 @@ public class movement : MonoBehaviour
         if (timerForWait <= 0f)
         {
             wait.SetActive(false);
+            life.SetActive(true);
+            staminabar.SetActive(true);
+            coin.SetActive(true);
         }
     }
     void FixedUpdate()

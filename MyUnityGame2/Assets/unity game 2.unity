@@ -20946,6 +20946,9 @@ MonoBehaviour:
   coins: 0
   closeToDoor: 0
   wait: {fileID: 2096691269}
+  staminabar: {fileID: 473421361}
+  life: {fileID: 1727441970}
+  coin: {fileID: 1635626602}
   doorEnter: 119
   an: {fileID: 475941031}
   coinsoptimization: 0
@@ -87531,7 +87534,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -147.2, y: -42.6, z: 0}
-  m_LocalScale: {x: 40, y: 75, z: 1}
+  m_LocalScale: {x: 40, y: 90, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
