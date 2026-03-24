@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -39,9 +40,15 @@ public class movement : MonoBehaviour
     public Sprite jump;
     public Sprite normal;
 
+    public float timerForWait;
     public SpriteRenderer sr;
     public int coins = 0;
 
+    public bool closeToDoor;
+
+    public GameObject wait;
+
+    public KeyCode doorEnter = KeyCode.W;
     [SerializeField] private Animator an;
     bool iswalking;
 
@@ -50,6 +57,7 @@ public class movement : MonoBehaviour
 
     void Start()
     {
+        wait.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         an = GetComponent<Animator>();
@@ -58,7 +66,15 @@ public class movement : MonoBehaviour
             gl = GetComponent<Light2D>();
     }
     void Update()
-    {        
+    {
+        wait.transform.position = transform.position;
+
+        if (closeToDoor && Input.GetKeyDown(doorEnter))
+        {
+            wait.SetActive(true);
+            timerForWait = 1.5f;
+            transform.position = new Vector3(10f, -50f, 0f);
+        }    
         if (stamina < maxstamina && timer > 0.075f)
         {
             stamina += 1;
@@ -133,9 +149,14 @@ public class movement : MonoBehaviour
         {
             an.SetBool("Isatacking", false);
         }
+        if (timerForWait <= 0f)
+        {
+            wait.SetActive(false);
+        }
     }
     void FixedUpdate()
     {
+        timerForWait -= Time.fixedDeltaTime;
         if (isdashing)
         {
             speed = mspeed * 5;
@@ -224,6 +245,10 @@ public class movement : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("Door"))
+        {
+            closeToDoor = true;
+        }
         if (collision.gameObject.CompareTag("enemy"))
         {
             df = true;

@@ -15,6 +15,7 @@ TagManager:
   - Rwall
   - Twall
   - coin
+  - Door
   layers:
   - Default
   - TransparentFX
