@@ -1,4 +1,6 @@
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
+using System.Transactions;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -57,12 +59,14 @@ public class movement : MonoBehaviour
     [SerializeField] private Animator an;
     bool iswalking;
 
+    public bool isLoading = false;
+
     public int coinsoptimization = 0;
 
 
     void Start()
     {
-        wait.SetActive(false);
+        wait.SetActive(true);
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         an = GetComponent<Animator>();
@@ -72,16 +76,19 @@ public class movement : MonoBehaviour
     }
     void Update()
     {
-        wait.transform.position = transform.position;
-
+        wait.transform.position = Camera.main.transform.position + new Vector3(0f, 0f, 5f);
         if (closeToDoor && Input.GetKeyDown(doorEnter))
         {
+            isLoading = true;
+
             wait.SetActive(true);
             life.SetActive(false);
             staminabar.SetActive(false);
             coin.SetActive(false);
-            timerForWait = 1.5f;
+
             transform.position = new Vector3(10f, -50f, 0f);
+
+            timerForWait = 1.5f;        
         }    
         if (stamina < maxstamina && timer > 0.075f)
         {
@@ -89,7 +96,63 @@ public class movement : MonoBehaviour
             timer = 0f;
         }
         moveHorizontal = 0f;
-        if (Input.GetKey(left))
+        if (health <= 0)
+        {
+            health = 10;
+            losthealth = 0;
+            transform.localPosition = new Vector3(0f,0f,0f);
+        }
+        if (iswalking)
+        {
+            an.SetBool("IsWalking", true);
+        }
+        else if(iswalking == false)
+        {
+            an.SetBool("IsWalking", false);
+        }
+        if (is_jumping)
+        {
+            an.SetBool("IsJumping", true);
+        }
+        else if (is_jumping == false)
+        {
+           an.SetBool("IsJumping", false);
+        }
+        if (att.isatack)
+        {
+            an.SetBool("Isatacking", true);
+        }
+        else
+        {
+            an.SetBool("Isatacking", false);
+        }
+        if (timerForWait <= 0f)
+        {
+            isLoading = false;
+            wait.SetActive(false);
+            life.SetActive(true);
+            staminabar.SetActive(true);
+            coin.SetActive(true);
+        }
+        if (isLoading)
+        {
+            rb.linearVelocity = Vector2.zero;
+            timerForWait -= Time.deltaTime;
+
+            if (timerForWait <= 0f)
+            {
+                isLoading = false;
+
+                wait.SetActive(false);
+                staminabar.SetActive(true);
+                life.SetActive(true);
+                coin.SetActive(true);
+            }
+            return;
+        }
+        else
+        {
+              if (Input.GetKey(left))
         {
             moveHorizontal = -1f;
             iswalking = true;
@@ -127,47 +190,11 @@ public class movement : MonoBehaviour
                 stamina -= 50;
             }
         }
-        if (health <= 0)
-        {
-            health = 10;
-            losthealth = 0;
-            transform.localPosition = new Vector3(0f,0f,0f);
-        }
-        if (iswalking)
-        {
-            an.SetBool("IsWalking", true);
-        }
-        else if(iswalking == false)
-        {
-            an.SetBool("IsWalking", false);
-        }
-        if (is_jumping)
-        {
-            an.SetBool("IsJumping", true);
-        }
-        else if (is_jumping == false)
-        {
-           an.SetBool("IsJumping", false);
-        }
-        if (att.isatack)
-        {
-            an.SetBool("Isatacking", true);
-        }
-        else
-        {
-            an.SetBool("Isatacking", false);
-        }
-        if (timerForWait <= 0f)
-        {
-            wait.SetActive(false);
-            life.SetActive(true);
-            staminabar.SetActive(true);
-            coin.SetActive(true);
         }
     }
     void FixedUpdate()
     {
-        timerForWait -= Time.fixedDeltaTime;
+        
         if (isdashing)
         {
             speed = mspeed * 5;

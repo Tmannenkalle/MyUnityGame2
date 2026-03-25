@@ -1,3 +1,5 @@
+using System.Security;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
@@ -7,8 +9,8 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] float smoothSpeed = 5f;
     [SerializeField] float deadZoneY = 2f;
     [SerializeField] float lookAheadX = 2f;
-
     float currentLookAhead;
+
 
     void LateUpdate()
     {
