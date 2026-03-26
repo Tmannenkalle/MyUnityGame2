@@ -16,6 +16,7 @@ TagManager:
   - Twall
   - coin
   - Door
+  - Sword
   layers:
   - Default
   - TransparentFX

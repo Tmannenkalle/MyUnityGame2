@@ -63,6 +63,8 @@ public class movement : MonoBehaviour
 
     public int coinsoptimization = 0;
 
+    public bool isCloseToSword;
+
 
     void Start()
     {
@@ -76,6 +78,10 @@ public class movement : MonoBehaviour
     }
     void Update()
     {
+        if (isCloseToSword)
+        {
+            
+        }
         wait.transform.position = Camera.main.transform.position + new Vector3(0f, 0f, 5f);
         if (closeToDoor && Input.GetKeyDown(doorEnter))
         {
@@ -283,6 +289,10 @@ public class movement : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.gameObject.CompareTag("Sword"))
+        {
+            isCloseToSword = true;
+        }
         if (collision.gameObject.CompareTag("Door"))
         {
             closeToDoor = true;
