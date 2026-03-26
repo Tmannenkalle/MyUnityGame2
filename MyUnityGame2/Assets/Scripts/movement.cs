@@ -87,7 +87,7 @@ public class movement : MonoBehaviour
         {
             if (Input.GetKeyDown(interact.E))
             {
-                timerforSword = 2.5f;
+                timerforSword = 5f;
             }
             if (timerforSword <= 0f && Input.GetKeyDown(Enter) && coins >= 50)
             {
@@ -95,7 +95,7 @@ public class movement : MonoBehaviour
                 coins -= 50;
             }
         }
-        if (timerforSword <= 2.5f){
+        if (timerforSword <= 5f){
         timerforSword -= Time.deltaTime;}
         wait.transform.position = Camera.main.transform.position + new Vector3(0f, 0f, 5f);
         if (closeToDoor && Input.GetKeyDown(doorEnter))
