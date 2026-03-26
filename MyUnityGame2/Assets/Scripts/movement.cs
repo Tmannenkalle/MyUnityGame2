@@ -57,14 +57,19 @@ public class movement : MonoBehaviour
     public GameObject coin;
     public KeyCode doorEnter = KeyCode.W;
     [SerializeField] private Animator an;
-    bool iswalking;
+    bool iswalking; 
 
     public bool isLoading = false;
 
     public int coinsoptimization = 0;
 
-    public bool isCloseToSword;
+    public float timerforSword = 50000f;
 
+    public Interactbledetector interact;
+
+    public KeyCode Enter = KeyCode.R;
+
+    public bool haveSword = false;
 
     void Start()
     {
@@ -78,10 +83,20 @@ public class movement : MonoBehaviour
     }
     void Update()
     {
-        if (isCloseToSword)
+        if (interact.isCloseToSword)
         {
-            
+            if (Input.GetKeyDown(interact.E))
+            {
+                timerforSword = 2.5f;
+            }
+            if (timerforSword <= 0f && Input.GetKeyDown(Enter) && coins >= 50)
+            {
+                haveSword = true;
+                coins -= 50;
+            }
         }
+        if (timerforSword <= 2.5f){
+        timerforSword -= Time.deltaTime;}
         wait.transform.position = Camera.main.transform.position + new Vector3(0f, 0f, 5f);
         if (closeToDoor && Input.GetKeyDown(doorEnter))
         {
@@ -289,10 +304,6 @@ public class movement : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Sword"))
-        {
-            isCloseToSword = true;
-        }
         if (collision.gameObject.CompareTag("Door"))
         {
             closeToDoor = true;
@@ -307,6 +318,13 @@ public class movement : MonoBehaviour
         {
             coins += 1;
             Destroy(collision.gameObject);
+        }
+    }
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("Door"))
+        {
+            closeToDoor = false;
         }
     }
 }

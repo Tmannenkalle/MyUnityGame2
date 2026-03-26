@@ -22598,7 +22598,7 @@ MonoBehaviour:
   normal: {fileID: -6888756438569675735, guid: cb9dd2000ab58ad4c9d848b888772d94, type: 3}
   timerForWait: 0
   sr: {fileID: 475941028}
-  coins: 0
+  coins: 50
   closeToDoor: 0
   wait: {fileID: 2096691269}
   staminabar: {fileID: 473421361}
@@ -22608,7 +22608,10 @@ MonoBehaviour:
   an: {fileID: 475941031}
   isLoading: 0
   coinsoptimization: 0
-  isCloseToSword: 0
+  timerforSword: 50
+  interact: {fileID: 572304493}
+  Enter: 98
+  haveSword: 0
 --- !u!61 &475941026
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27009,6 +27012,8 @@ MonoBehaviour:
   Player: {fileID: 475941029}
   interactionIcon: {fileID: 136162194}
   E: 101
+  m: {fileID: 475941025}
+  isCloseToSword: 0
 --- !u!50 &572304494
 Rigidbody2D:
   serializedVersion: 5
@@ -29211,7 +29216,7 @@ Transform:
   m_GameObject: {fileID: 619072949}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 56.55, y: 0.5, z: 0}
+  m_LocalPosition: {x: -297.4, y: -1.5, z: 0}
   m_LocalScale: {x: 28, y: 28, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46196,6 +46201,8 @@ MonoBehaviour:
   srs: {fileID: 1005528856}
   isatack: 0
   isatacktimer: 0
+  dmgsquare: {fileID: 1005528852}
+  mo: {fileID: 475941025}
 --- !u!212 &1005528856
 SpriteRenderer:
   serializedVersion: 2
@@ -79056,6 +79063,7 @@ GameObject:
   - component: {fileID: 1745208315}
   - component: {fileID: 1745208317}
   - component: {fileID: 1745208316}
+  - component: {fileID: 1745208318}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Sword
@@ -79183,6 +79191,23 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1745208318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745208314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d166569aafbf741da8044e50f81aa6fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionNpc
+  dialogueData: {fileID: 11400000, guid: 2185bd8a00f4f4ef9895c5f8ad7ba628, type: 2}
+  dialoguePanel: {fileID: 1877761520}
+  dialougetext: {fileID: 1585881114}
+  nameText: {fileID: 705711348}
+  Button: {fileID: 2018422586}
 --- !u!1 &1751257569
 GameObject:
   m_ObjectHideFlags: 0

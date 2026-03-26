@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Interactbledetector : MonoBehaviour
@@ -5,9 +6,14 @@ public class Interactbledetector : MonoBehaviour
     public Transform Player;
     [SerializeField]private IInteractable interactableInRange = null;
     [SerializeField]private GameObject interactionIcon;
-    [SerializeField]private KeyCode E = KeyCode.E;
+    public KeyCode E = KeyCode.E;
     private Vector3 higher = new Vector3(0, 1, 0);
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    public movement m;
+
+    public bool isCloseToSword;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         interactionIcon.SetActive(false);
@@ -25,6 +31,14 @@ public class Interactbledetector : MonoBehaviour
             interactableInRange = interact;
             interactionIcon.SetActive(true);
         }
+        if (collision.gameObject.CompareTag("Sword"))
+        {
+            isCloseToSword = true;
+        }
+        else
+        {
+            isCloseToSword = false;
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -37,8 +51,22 @@ public class Interactbledetector : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(E)){
-        interactableInRange?.Interact();}
+            if (interactableInRange != null)
+        {
+            if (isCloseToSword && m.haveSword)
+                {
+                    return;
+                }
+
+       
+            interactableInRange?.Interact();
+        }
+        }
         transform.position = Player.position;
 
+        if (isCloseToSword && m.haveSword)
+        {
+            
+        }
     }
 }

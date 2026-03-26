@@ -10,11 +10,19 @@ public class attack : MonoBehaviour
     public bool isatack;
     Vector3 offset = new Vector3(1.25f, 0f, 0f);
     public float isatacktimer;
-    void Start()
-    {}
 
+    public GameObject dmgsquare;
+
+    public movement mo;
+
+    
+
+    void Start()
+    {
+    }
     void Update()
     {
+        if (mo.haveSword){
         if (Input.GetMouseButtonDown(0) && cooldown <= 0f)
         {
             isatack = true;
@@ -35,9 +43,10 @@ public class attack : MonoBehaviour
             }
         }  
         transform.position = player.position + offset;
-    }
+    }}
     void FixedUpdate()
     {
+        if (mo.haveSword){
         if (atktime <= 0f)
             transform.localScale = new Vector3(0, 4, 1);
 
@@ -48,5 +57,5 @@ public class attack : MonoBehaviour
         {
             isatack = false;
         }
-    }
-}
+    }}}
+

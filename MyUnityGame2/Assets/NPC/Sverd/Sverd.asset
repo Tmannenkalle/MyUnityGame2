@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   npcNavn: 
   dialogeLines:
-  - 'Want to buy the sword for 50 coins? Press Enter if you want:'
-  typingSpeed: 0.3
+  - Want to buy the sword for 50 coins? Press Enter.
+  typingSpeed: 0.1
   autodialogelines: 00
   autodialogelinesdelay: 0.4
