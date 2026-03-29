@@ -3957,6 +3957,102 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &71791486
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 71791489}
+  - component: {fileID: 71791487}
+  - component: {fileID: 71791490}
+  m_Layer: 0
+  m_Name: Detect
+  m_TagString: Area
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!58 &71791487
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71791486}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.41199207, y: 0.10769558}
+  m_Radius: 5.0947256
+--- !u!4 &71791489
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71791486}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.36, y: -3.63, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &71791490
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71791486}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &77663377
 GameObject:
   m_ObjectHideFlags: 0
@@ -22855,7 +22951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f34ab2e464fac6499ca0da17e74f0a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::movement
-  speed: 5
+  speed: 50
   mspeed: 5
   jumppower: 9
   is_jumping: 0
@@ -22886,7 +22982,7 @@ MonoBehaviour:
   normal: {fileID: -6888756438569675735, guid: cb9dd2000ab58ad4c9d848b888772d94, type: 3}
   timerForWait: 0
   sr: {fileID: 475941028}
-  coins: 50
+  coins: 0
   closeToDoor: 0
   wait: {fileID: 2096691269}
   staminabar: {fileID: 473421361}
@@ -22900,6 +22996,7 @@ MonoBehaviour:
   interact: {fileID: 572304493}
   Enter: 102
   haveSword: 0
+  en: {fileID: 2007295205}
 --- !u!61 &475941026
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -89642,7 +89739,7 @@ Transform:
   m_GameObject: {fileID: 1968703539}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.4, y: -40.5, z: 0}
+  m_LocalPosition: {x: 10.44, y: -40.72, z: 0}
   m_LocalScale: {x: 50, y: 50, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -90984,6 +91081,7 @@ GameObject:
   - component: {fileID: 2007295202}
   - component: {fileID: 2007295201}
   - component: {fileID: 2007295204}
+  - component: {fileID: 2007295205}
   m_Layer: 0
   m_Name: slime
   m_TagString: enemy
@@ -91138,6 +91236,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2007295205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007295200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95147f26bcd944edda72be68bbcd58ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  Pla: {fileID: 475941024}
+  rbo: {fileID: 2007295204}
+  isclose: 0
+  move: 0
+  Plarb: {fileID: 475941027}
+  sped: 1.5
 --- !u!1 &2007340096
 GameObject:
   m_ObjectHideFlags: 0
@@ -99011,3 +99127,4 @@ SceneRoots:
   - {fileID: 1906562419}
   - {fileID: 698860242}
   - {fileID: 1225127805}
+  - {fileID: 71791489}

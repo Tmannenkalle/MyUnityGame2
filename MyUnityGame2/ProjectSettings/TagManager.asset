@@ -17,6 +17,7 @@ TagManager:
   - coin
   - Door
   - Sword
+  - Area
   layers:
   - Default
   - TransparentFX
