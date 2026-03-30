@@ -4340,6 +4340,7 @@ GameObject:
   - component: {fileID: 83789166}
   - component: {fileID: 83789165}
   - component: {fileID: 83789164}
+  - component: {fileID: 83789169}
   m_Layer: 0
   m_Name: Bat (3)
   m_TagString: enemy
@@ -4530,6 +4531,19 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &83789169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83789162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2668ab6b0d2b84c8168da8c9c14c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::lvl_1_enemy
+  hp: 1
 --- !u!1 &84592199
 GameObject:
   m_ObjectHideFlags: 0
@@ -20298,6 +20312,7 @@ GameObject:
   - component: {fileID: 410616537}
   - component: {fileID: 410616536}
   - component: {fileID: 410616535}
+  - component: {fileID: 410616540}
   m_Layer: 0
   m_Name: Bat (1)
   m_TagString: enemy
@@ -20488,6 +20503,19 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &410616540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410616533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2668ab6b0d2b84c8168da8c9c14c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::lvl_1_enemy
+  hp: 1
 --- !u!1 &416230088
 GameObject:
   m_ObjectHideFlags: 0
@@ -22982,7 +23010,7 @@ MonoBehaviour:
   normal: {fileID: -6888756438569675735, guid: cb9dd2000ab58ad4c9d848b888772d94, type: 3}
   timerForWait: 0
   sr: {fileID: 475941028}
-  coins: 0
+  coins: 50
   closeToDoor: 0
   wait: {fileID: 2096691269}
   staminabar: {fileID: 473421361}
@@ -22991,7 +23019,7 @@ MonoBehaviour:
   doorEnter: 119
   an: {fileID: 475941031}
   isLoading: 0
-  coinsoptimization: 0
+  coinsoptimization: 50
   timerforSword: 50
   interact: {fileID: 572304493}
   Enter: 102
@@ -23483,6 +23511,7 @@ GameObject:
   - component: {fileID: 481586880}
   - component: {fileID: 481586879}
   - component: {fileID: 481586878}
+  - component: {fileID: 481586883}
   m_Layer: 0
   m_Name: Bat (2)
   m_TagString: enemy
@@ -23673,6 +23702,19 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &481586883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481586876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2668ab6b0d2b84c8168da8c9c14c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::lvl_1_enemy
+  hp: 1
 --- !u!1 &488799748
 GameObject:
   m_ObjectHideFlags: 0
@@ -41222,6 +41264,7 @@ GameObject:
   - component: {fileID: 873599972}
   - component: {fileID: 873599971}
   - component: {fileID: 873599970}
+  - component: {fileID: 873599975}
   m_Layer: 0
   m_Name: Bat (3)
   m_TagString: enemy
@@ -41412,6 +41455,19 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &873599975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873599968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2668ab6b0d2b84c8168da8c9c14c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::lvl_1_enemy
+  hp: 1
 --- !u!1 &878622485
 GameObject:
   m_ObjectHideFlags: 0
@@ -47199,7 +47255,7 @@ GameObject:
   - component: {fileID: 1005528857}
   m_Layer: 0
   m_Name: dmg square
-  m_TagString: Untagged
+  m_TagString: attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47335,7 +47391,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 4198773028377060457, guid: 62d27f25ab2ad724abec4965608ad5a6, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -47343,7 +47399,7 @@ SpriteRenderer:
   m_Size: {x: 0.1, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1005528857
 MonoBehaviour:
@@ -63354,6 +63410,7 @@ GameObject:
   - component: {fileID: 1422710189}
   - component: {fileID: 1422710192}
   - component: {fileID: 1422710193}
+  - component: {fileID: 1422710194}
   m_Layer: 0
   m_Name: Bat (1)
   m_TagString: enemy
@@ -63544,6 +63601,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1422710194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422710187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2668ab6b0d2b84c8168da8c9c14c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::lvl_1_enemy
+  hp: 1
 --- !u!1 &1423023042
 GameObject:
   m_ObjectHideFlags: 0
@@ -75656,6 +75726,7 @@ GameObject:
   - component: {fileID: 1644113421}
   - component: {fileID: 1644113420}
   - component: {fileID: 1644113419}
+  - component: {fileID: 1644113424}
   m_Layer: 0
   m_Name: Bat (4)
   m_TagString: enemy
@@ -75846,6 +75917,19 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1644113424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644113417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2668ab6b0d2b84c8168da8c9c14c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::lvl_1_enemy
+  hp: 1
 --- !u!1 &1644234784
 GameObject:
   m_ObjectHideFlags: 0
@@ -81559,6 +81643,7 @@ GameObject:
   - component: {fileID: 1755331858}
   - component: {fileID: 1755331857}
   - component: {fileID: 1755331856}
+  - component: {fileID: 1755331861}
   m_Layer: 0
   m_Name: Bat (2)
   m_TagString: enemy
@@ -81749,6 +81834,19 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1755331861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755331854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2668ab6b0d2b84c8168da8c9c14c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::lvl_1_enemy
+  hp: 1
 --- !u!1 &1756856635
 GameObject:
   m_ObjectHideFlags: 0
@@ -90374,6 +90472,7 @@ GameObject:
   - component: {fileID: 1991569099}
   - component: {fileID: 1991569098}
   - component: {fileID: 1991569101}
+  - component: {fileID: 1991569102}
   m_Layer: 0
   m_Name: Bat
   m_TagString: enemy
@@ -90523,6 +90622,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.21996263, y: 0.1366418}
   m_EdgeRadius: 0
+--- !u!114 &1991569102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991569097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2668ab6b0d2b84c8168da8c9c14c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  hp: 1
 --- !u!1 &1992461457
 GameObject:
   m_ObjectHideFlags: 0
@@ -91082,6 +91194,7 @@ GameObject:
   - component: {fileID: 2007295201}
   - component: {fileID: 2007295204}
   - component: {fileID: 2007295205}
+  - component: {fileID: 2007295206}
   m_Layer: 0
   m_Name: slime
   m_TagString: enemy
@@ -91254,6 +91367,19 @@ MonoBehaviour:
   move: 0
   Plarb: {fileID: 475941027}
   sped: 1.5
+--- !u!114 &2007295206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007295200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2668ab6b0d2b84c8168da8c9c14c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::lvl_1_enemy
+  hp: 1
 --- !u!1 &2007340096
 GameObject:
   m_ObjectHideFlags: 0
@@ -97694,7 +97820,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

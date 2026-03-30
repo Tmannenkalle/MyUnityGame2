@@ -18,6 +18,7 @@ TagManager:
   - Door
   - Sword
   - Area
+  - attack
   layers:
   - Default
   - TransparentFX
