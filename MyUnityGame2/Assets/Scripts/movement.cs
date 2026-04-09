@@ -321,20 +321,12 @@ public class movement : MonoBehaviour
             coins += 1;
             Destroy(collision.gameObject);
         }
-        if (collision.gameObject.CompareTag("Area"))
-        {
-            en.isclose = true;
-        } 
     }
     void OnTriggerExit2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("Door"))
         {
             closeToDoor = false;
-        }
-        if (collider.gameObject.CompareTag("Area"))
-        {
-            en.isclose = false;
         }
     }
 }
