@@ -1,6 +1,3 @@
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography;
-using System.Transactions;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -39,43 +36,21 @@ public class movement : MonoBehaviour
     public float dftime = 0.2f;
     private bool df = false;
     public attack att;
-    public Sprite jump;
-    public Sprite normal;
 
-    public float timerForWait;
     public SpriteRenderer sr;
     public int coins = 0;
 
-    public bool closeToDoor;
-
-    public GameObject wait;
-
-    public GameObject staminabar;
-
-    public GameObject life;
-
-    public GameObject coin;
-    public KeyCode doorEnter = KeyCode.W;
     [SerializeField] private Animator an;
-    bool iswalking; 
-
-    public bool isLoading = false;
+    bool iswalking;
 
     public int coinsoptimization = 0;
+    public float respawnx;
+    public float respawny;
+    public bool haveSword;
 
-    public float timerforSword = 50000f;
-
-    public Interactbledetector interact;
-
-    public KeyCode Enter = KeyCode.R;
-
-    public bool haveSword = false;
-
-    public Enemy en;
 
     void Start()
     {
-        wait.SetActive(true);
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         an = GetComponent<Animator>();
@@ -84,98 +59,14 @@ public class movement : MonoBehaviour
             gl = GetComponent<Light2D>();
     }
     void Update()
-    {
-        if (interact.isCloseToSword)
-        {
-            if (Input.GetKeyDown(interact.E))
-            {
-                timerforSword = 5f;
-            }
-            if (timerforSword <= 0f && Input.GetKeyDown(Enter) && coins >= 50)
-            {
-                haveSword = true;
-                coins -= 50;
-            }
-        }
-        if (timerforSword <= 5f){
-        timerforSword -= Time.deltaTime;}
-        wait.transform.position = Camera.main.transform.position + new Vector3(0f, 0f, 5f);
-        if (closeToDoor && Input.GetKeyDown(doorEnter))
-        {
-            isLoading = true;
-
-            wait.SetActive(true);
-            life.SetActive(false);
-            staminabar.SetActive(false);
-            coin.SetActive(false);
-
-            transform.position = new Vector3(10f, -50f, 0f);
-
-            timerForWait = 1.5f;        
-        }    
+    {        
         if (stamina < maxstamina && timer > 0.075f)
         {
             stamina += 1;
             timer = 0f;
         }
         moveHorizontal = 0f;
-        if (health <= 0)
-        {
-            health = 10;
-            losthealth = 0;
-            transform.localPosition = new Vector3(0f,0f,0f);
-        }
-        if (iswalking)
-        {
-            an.SetBool("IsWalking", true);
-        }
-        else if(iswalking == false)
-        {
-            an.SetBool("IsWalking", false);
-        }
-        if (is_jumping)
-        {
-            an.SetBool("IsJumping", true);
-        }
-        else if (is_jumping == false)
-        {
-           an.SetBool("IsJumping", false);
-        }
-        if (att.isatack)
-        {
-            an.SetBool("Isatacking", true);
-        }
-        else
-        {
-            an.SetBool("Isatacking", false);
-        }
-        if (timerForWait <= 0f)
-        {
-            isLoading = false;
-            wait.SetActive(false);
-            life.SetActive(true);
-            staminabar.SetActive(true);
-            coin.SetActive(true);
-        }
-        if (isLoading)
-        {
-            rb.linearVelocity = Vector2.zero;
-            timerForWait -= Time.deltaTime;
-
-            if (timerForWait <= 0f)
-            {
-                isLoading = false;
-
-                wait.SetActive(false);
-                staminabar.SetActive(true);
-                life.SetActive(true);
-                coin.SetActive(true);
-            }
-            return;
-        }
-        else
-        {
-              if (Input.GetKey(left))
+        if (Input.GetKey(left))
         {
             moveHorizontal = -1f;
             iswalking = true;
@@ -196,9 +87,9 @@ public class movement : MonoBehaviour
             
             if (jumps > 0)
             {
-                is_jumping = true;
                 rb.AddForce(new Vector2(0f, jumppower), ForceMode2D.Impulse);
                 jumps -= 1;
+                is_jumping = true;
             }
             
             
@@ -213,11 +104,40 @@ public class movement : MonoBehaviour
                 stamina -= 50;
             }
         }
+        if (health <= 0)
+        {
+            health = 10;
+            losthealth = 0;
+            transform.localPosition = new Vector3(respawnx,respawny,0f);
+        }
+        if (iswalking)
+        {
+            an.SetBool("IsWalking", true);
+        }
+        else if(iswalking == false)
+        {
+            an.SetBool("IsWalking", false);
+        }
+        if (is_jumping)
+        {
+            an.SetBool("IsJumping", true);
+        }
+        else
+        {
+            an.SetBool("IsJumping", false);
+        }
+        if (att.isatack)
+        {
+            Debug.Log(att);
+            an.SetBool("Isatacking", true);
+        }
+        else
+        {
+            an.SetBool("Isatacking", false);
         }
     }
     void FixedUpdate()
     {
-        
         if (isdashing)
         {
             speed = mspeed * 5;
@@ -306,10 +226,6 @@ public class movement : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Door"))
-        {
-            closeToDoor = true;
-        }
         if (collision.gameObject.CompareTag("enemy"))
         {
             df = true;
@@ -320,13 +236,6 @@ public class movement : MonoBehaviour
         {
             coins += 1;
             Destroy(collision.gameObject);
-        }
-    }
-    void OnTriggerExit2D(Collider2D collider)
-    {
-        if (collider.gameObject.CompareTag("Door"))
-        {
-            closeToDoor = false;
         }
     }
 }
