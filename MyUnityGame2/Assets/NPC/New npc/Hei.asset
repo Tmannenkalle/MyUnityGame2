@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   npcNavn: Npc
   dialogeLines:
-  - Hi thought you were not alive
-  - You were sent to the jungle by the king
-  typingSpeed: 0.1
+  - Hi... I thought you were dead?
+  - You were unconscious for days, and then you suddenly dissappeared.
+  typingSpeed: 0.075
   autodialogelines: 0100
   autodialogelinesdelay: 0.4

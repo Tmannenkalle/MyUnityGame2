@@ -15,6 +15,6 @@ MonoBehaviour:
   npcNavn: Per
   dialogeLines:
   - 'Hei '
-  typingSpeed: 0.4
+  typingSpeed: 0.18
   autodialogelines: 
   autodialogelinesdelay: 0.4
