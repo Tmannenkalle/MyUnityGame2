@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   npcNavn: Sword man
   dialogeLines:
-  - Hi my sword got taken away from a guy.
-  - Could you please bring it back to me?
+  - Hello there traveller!
+  - I see you don't have a weapon with you
+  - I had one, but someone in the village stole it
+  - Can you find the thief and bring it back to me?
   typingSpeed: 0.075
   autodialogelines: 01
   autodialogelinesdelay: 0.5

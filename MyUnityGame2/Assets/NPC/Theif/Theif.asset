@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   npcNavn: Mysterious man
   dialogeLines:
-  - 'Hi man... I am very innocent. '
-  - 'I have not stolen from someone or something... '
+  - What do you want........
+  - How did you know i was the thief!?
   typingSpeed: 0.1
   autodialogelines: 0100
   autodialogelinesdelay: 0.4
