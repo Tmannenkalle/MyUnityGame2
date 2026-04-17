@@ -27650,7 +27650,10 @@ MonoBehaviour:
   interactionIcon: {fileID: 136162194}
   E: 101
   m: {fileID: 475941025}
-  isCloseToSword: 0
+  isCloseToTheif: 0
+  closeold: 0
+  old: 0
+  r: {fileID: 1245029625}
 --- !u!50 &572304494
 Rigidbody2D:
   serializedVersion: 5
@@ -56602,9 +56605,10 @@ GameObject:
   - component: {fileID: 1245029622}
   - component: {fileID: 1245029621}
   - component: {fileID: 1245029620}
+  - component: {fileID: 1245029625}
   m_Layer: 0
-  m_Name: Theif_0
-  m_TagString: Untagged
+  m_Name: Theif
+  m_TagString: Theif
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56767,12 +56771,28 @@ Transform:
   m_GameObject: {fileID: 1245029619}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 40.970123, y: -4.7271204, z: 0}
+  m_LocalPosition: {x: 40.76, y: -4.786, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 964803528}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1245029625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245029619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 305873098edce4a1c9b4c7d55980861f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  run: 0
+  Mov: 0
+  rb: {fileID: 0}
+  canmove: 0
 --- !u!1 &1246388879
 GameObject:
   m_ObjectHideFlags: 0
@@ -81442,7 +81462,7 @@ GameObject:
   - component: {fileID: 1757921353}
   m_Layer: 0
   m_Name: sword guy
-  m_TagString: Untagged
+  m_TagString: OldMan
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

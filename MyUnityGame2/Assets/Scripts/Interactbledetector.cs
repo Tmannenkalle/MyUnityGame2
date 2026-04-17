@@ -11,7 +11,13 @@ public class Interactbledetector : MonoBehaviour
 
     public movement m;
 
-    public bool isCloseToSword;
+    public bool isCloseToTheif;
+
+    public bool closeold;
+
+    public int old = 0;
+
+    public RUUUUUNNN r;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,13 +37,13 @@ public class Interactbledetector : MonoBehaviour
             interactableInRange = interact;
             interactionIcon.SetActive(true);
         }
-        if (collision.gameObject.CompareTag("Sword"))
+        if (collision.gameObject.CompareTag("Theif"))
         {
-            isCloseToSword = true;
+            isCloseToTheif = true;
         }
-        else
+        if (collision.gameObject.CompareTag("OldMan"))
         {
-            isCloseToSword = false;
+            closeold = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -47,15 +53,28 @@ public class Interactbledetector : MonoBehaviour
             interactableInRange = null;
             interactionIcon.SetActive(false);
         }
+        if (collision.gameObject.CompareTag("Theif"))
+        {
+            isCloseToTheif = false;
+        }
+        if (collision.gameObject.CompareTag("OldMan"))
+        {
+            closeold = false;
+        }
     }
     void Update()
     {
         if(Input.GetKeyDown(E)){
             if (interactableInRange != null)
         {
-            if (isCloseToSword && m.haveSword)
+            if (isCloseToTheif && old == 1)
                 {
-                    return;
+                    r.run = true;
+                    r.canmove = true;
+                }
+            if (closeold)
+                {
+                    old++;
                 }
 
        
@@ -64,9 +83,5 @@ public class Interactbledetector : MonoBehaviour
         }
         transform.position = Player.position;
 
-        if (isCloseToSword && m.haveSword)
-        {
-            
-        }
     }
 }

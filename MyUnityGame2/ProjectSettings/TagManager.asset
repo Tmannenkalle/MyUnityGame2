@@ -19,6 +19,8 @@ TagManager:
   - Sword
   - Area
   - attack
+  - Theif
+  - OldMan
   layers:
   - Default
   - TransparentFX
