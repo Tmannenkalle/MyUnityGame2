@@ -20,8 +20,6 @@ public class checkpoint : MonoBehaviour
         {
             move.respawnx = checkpointposx;
             move.respawny = checkpointposy;
-            move.health = move.maxhealth;
-            move.losthealth = 0;
         }
     }
 }
