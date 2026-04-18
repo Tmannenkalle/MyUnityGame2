@@ -7,5 +7,5 @@ public class Interaction : ScriptableObject
     public string[] dialogeLines;
     public float typingSpeed = 0.4f;
     public bool[] autodialogelines;
-    public float autodialogelinesdelay = 0.4f;
+    public float autodialogelinesdelay = 0.7f;
 }

@@ -19,5 +19,5 @@ MonoBehaviour:
   - I had one, but someone in the village stole it
   - Can you find the thief and bring it back to me?
   typingSpeed: 0.075
-  autodialogelines: 01
+  autodialogelines: 0101010101
   autodialogelinesdelay: 0.5
