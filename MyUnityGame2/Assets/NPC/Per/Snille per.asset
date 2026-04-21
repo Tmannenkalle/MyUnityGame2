@@ -18,5 +18,5 @@ MonoBehaviour:
   - Hallo
   - "hvordan g\xE5r det?"
   typingSpeed: 0.1
-  autodialogelines: 010100
-  autodialogelinesdelay: 0.2
+  autodialogelines: 010101
+  autodialogelinesdelay: 0.5

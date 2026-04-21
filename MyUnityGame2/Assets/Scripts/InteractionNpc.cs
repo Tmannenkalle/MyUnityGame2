@@ -32,6 +32,10 @@ public class InteractionNpc : MonoBehaviour, IInteractable
         }
         if (isDialogeActive)
         {
+            if (isTyping) return;
+            if (dialogueData.autodialogelines.Length > dialogeIndex
+            && dialogueData.autodialogelines[dialogeIndex]) return;
+            
             NextLine();
         }
         else
