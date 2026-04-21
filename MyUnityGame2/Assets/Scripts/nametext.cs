@@ -6,24 +6,58 @@ public class nametext : MonoBehaviour
 {
     public movement move;
     public TMP_Text nametxt;
-    public float time = 3f;
     void Update()
     {
         if (move.gtxt > 0)
         {
             nametxt.text = "Hello there traveller!";
-            if (time <= 0f)
+            if (move.time <= 0f)
             {
                 nametxt.text = "It gets lonely up here sometimes, so thanks for visiting!\nAs a reward you get hermes boots which make you 20% faster and give you 20% more jumppower!";
             }
         }
-        if (move.cutscenetime < 0f)
+        if (move.cutscenetime <= 0f && move.gtxt == 0)
+        {
             nametxt.text = "";
+            move.cutscenenumber = 0;
+            if (move.hermesboots)
+            {
+                move.jumppower = 10.2f;
+                move.mspeed = 6f;
+            }
+            else
+            {
+                move.mspeed = 5f;
+                move.jumppower = 8.5f;
+            }
+        }
+        if (move.cutscenenumber == 1)
+        {
+            if (move.time <= 0f && move.time > -6f)
+            {
+                nametxt.text = "I see you don't have a weapon with you? \nI had one, but it got stolen.";            
+            }
+            else if (move.time <= -6f)
+            {
+                nametxt.text = "If you can find the thief, I can give it to you.\nI think he's in the town somewhere";
+            } 
+            else
+                nametxt.text = "Hello there traveller!";
+            move.speed = 0f;
+            move.jumppower = 0f;
+            move.mspeed = 0f;
+        }
     }
 
     void FixedUpdate()
     {
         if (move.gtxt > 0)
-            time -= Time.fixedDeltaTime;
+            move.time -= Time.fixedDeltaTime;
+        if (move.cutscenenumber > 0)
+        {
+            move.cutscenetime -= Time.fixedDeltaTime;
+            move.time -= Time.fixedDeltaTime;
+        }
+
     }
 }

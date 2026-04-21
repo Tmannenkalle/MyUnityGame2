@@ -11971,7 +11971,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::nametext
   move: {fileID: 475941025}
   nametxt: {fileID: 236549204}
-  time: 2.5
 --- !u!114 &236549204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22868,8 +22867,10 @@ MonoBehaviour:
   respawnx: 0
   respawny: 0
   haveSword: 0
-  cutscene: 0
   cutscenetime: 0
+  cutscenenumber: 0
+  time: 3
+  thisisavariableyay: 0
 --- !u!61 &475941026
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -54052,6 +54053,7 @@ Transform:
   - {fileID: 1208490953}
   - {fileID: 15909411}
   - {fileID: 395613971}
+  - {fileID: 1630832622}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1197068769
@@ -74448,6 +74450,38 @@ Transform:
   - {fileID: 1344965243}
   m_Father: {fileID: 974963902}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1630832621
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1630832622}
+  m_Layer: 0
+  m_Name: CUTSCENE TRIGGERS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1630832622
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630832621}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 183.42654, y: -3.76042, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1854708543}
+  m_Father: {fileID: 1194404327}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1632025566
 GameObject:
   m_ObjectHideFlags: 0
@@ -84623,6 +84657,7 @@ GameObject:
   - component: {fileID: 1854708543}
   - component: {fileID: 1854708542}
   - component: {fileID: 1854708541}
+  - component: {fileID: 1854708544}
   m_Layer: 0
   m_Name: Square
   m_TagString: cutscene
@@ -84743,13 +84778,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1854708540}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 467.91, y: 3.16, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.6764221, y: 4.6333, z: 0}
   m_LocalScale: {x: 1, y: 13.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1630832622}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1854708544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854708540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b524bcf7acb2144188e5fa386993999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  move: {fileID: 475941025}
+  cutscene_number: 1
 --- !u!1 &1855912275
 GameObject:
   m_ObjectHideFlags: 0
@@ -97790,4 +97839,3 @@ SceneRoots:
   - {fileID: 802693400}
   - {fileID: 2088417185}
   - {fileID: 1211332673}
-  - {fileID: 1854708543}

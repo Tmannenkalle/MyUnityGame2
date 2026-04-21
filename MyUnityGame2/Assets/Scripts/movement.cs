@@ -47,9 +47,9 @@ public class movement : MonoBehaviour
     public float respawnx;
     public float respawny;
     public bool haveSword;
-    public int cutscene;
     public float cutscenetime;
-
+    public int cutscenenumber;
+    public float time = 3f;
 
     void Start()
     {
@@ -161,17 +161,18 @@ public class movement : MonoBehaviour
 
         if (gtxt > 0)
             cutscenetime -= Time.fixedDeltaTime;
-        if (cutscenetime <= 0)
+        if (cutscenetime <= 0 && gtxt > 0)
         {
             speed = 5f;
             mspeed = 5f;
             jumppower = 8.5f;
         }
-        if (cutscenetime <= -1)
+        if (cutscenetime <= -1 && gtxt > 0)
         {
             gtxt = 0;
             mspeed *= 1.2f;
             jumppower *= 1.2f;
+            hermesboots = true;
         }
         if (df)
         {
@@ -242,10 +243,5 @@ public class movement : MonoBehaviour
             coins += 1;
             Destroy(collision.gameObject);
         }
-        if (collision.gameObject.CompareTag("cutscene"))
-        {
-            cutscene += 1;
-        }
-
     }
 }
