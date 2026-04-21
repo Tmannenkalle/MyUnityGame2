@@ -17,7 +17,7 @@ public class nametext : MonoBehaviour
                 nametxt.text = "It gets lonely up here sometimes, so thanks for visiting!\nAs a reward you get hermes boots which make you 20% faster and give you 20% more jumppower!";
             }
         }
-        if (move.gtxtime < 0f)
+        if (move.cutscenetime < 0f)
             nametxt.text = "";
     }
 

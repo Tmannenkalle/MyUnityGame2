@@ -9,7 +9,7 @@ public class textbox : MonoBehaviour
         {
             transform.localScale = new Vector3(10f, 2.5f, 1f);
         }
-        if (move.gtxtime < 0f)
+        if (move.cutscenetime < 0f)
             transform.localScale = new Vector3(0f, 2.5f, 1f);
     }
 }

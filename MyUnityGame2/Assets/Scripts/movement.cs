@@ -47,6 +47,8 @@ public class movement : MonoBehaviour
     public float respawnx;
     public float respawny;
     public bool haveSword;
+    public int cutscene;
+    public float cutscenetime;
 
 
     void Start()
@@ -155,18 +157,19 @@ public class movement : MonoBehaviour
             rb.linearVelocity = new Vector2(moveHorizontal * speed, rb.linearVelocity.y);
 
         }
+
+
         if (gtxt > 0)
-            gtxtime -= Time.fixedDeltaTime;
-        if (gtxtime <= 0)
+            cutscenetime -= Time.fixedDeltaTime;
+        if (cutscenetime <= 0)
         {
             speed = 5f;
             mspeed = 5f;
             jumppower = 8.5f;
         }
-        if (gtxtime <= -1)
+        if (cutscenetime <= -1)
         {
             gtxt = 0;
-            gtxtime = 15f;
             mspeed *= 1.2f;
             jumppower *= 1.2f;
         }
@@ -182,6 +185,7 @@ public class movement : MonoBehaviour
             }
         }
     }
+    //The npc interaction stuff is at the bottom of the collision stuff
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("ground"))
@@ -221,6 +225,7 @@ public class movement : MonoBehaviour
             mspeed *= 1.2f;
             jumppower *= 1.2f;
             hermesboots = true;
+            cutscenetime = 15f;
         }
 
     }
@@ -237,5 +242,10 @@ public class movement : MonoBehaviour
             coins += 1;
             Destroy(collision.gameObject);
         }
+        if (collision.gameObject.CompareTag("cutscene"))
+        {
+            cutscene += 1;
+        }
+
     }
 }

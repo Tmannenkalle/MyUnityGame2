@@ -21,6 +21,7 @@ TagManager:
   - attack
   - Theif
   - OldMan
+  - cutscene
   layers:
   - Default
   - TransparentFX
