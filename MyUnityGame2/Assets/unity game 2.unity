@@ -22553,7 +22553,7 @@ Transform:
   m_GameObject: {fileID: 468724363}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.2, y: 0.55, z: 0}
+  m_LocalPosition: {x: -295.97, y: -0.54, z: 0}
   m_LocalScale: {x: 28, y: 28, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22676,10 +22676,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd70b669cb1b44914b2d22e7ae86ec40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoinDoor
-  teleport: {x: -7, y: 13, z: 0}
-  playerclose: 0
-  F: 102
-  play: {fileID: 475941024}
+  Doorkey: 1
+  move: {fileID: 475941025}
 --- !u!1 &469480323
 GameObject:
   m_ObjectHideFlags: 0
@@ -22934,6 +22932,10 @@ MonoBehaviour:
   cutscenetime: 0
   cutscenenumber: 0
   time: 3
+  doornumb: 0
+  F: 102
+  Movestop: 0
+  del: 1000
 --- !u!61 &475941026
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -45299,7 +45301,7 @@ Transform:
   m_GameObject: {fileID: 976536427}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.05, z: 0}
+  m_LocalPosition: {x: 0, y: 0.049999952, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

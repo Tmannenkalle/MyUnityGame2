@@ -1,3 +1,6 @@
+using System.Collections;
+using System.Security.AccessControl;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -50,6 +53,14 @@ public class movement : MonoBehaviour
     public float cutscenetime;
     public int cutscenenumber;
     public float time = 3f;
+
+    public int doornumb;
+
+    public KeyCode F = KeyCode.F;
+
+    public bool Movestop = false;
+
+    public float del;
 
     void Start()
     {
@@ -137,9 +148,19 @@ public class movement : MonoBehaviour
         {
             an.SetBool("Isatacking", false);
         }
+        if (doornumb == 1 && Input.GetKeyDown(F))
+        {
+            rb.linearVelocity = Vector2.zero;
+            transform.position = new Vector2(-3.5f, 6.5f) / del;
+        }
     }
     void FixedUpdate()
     {
+        if (Movestop)
+        {
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+            return;
+        }
         if (isdashing)
         {
             speed = mspeed * 5;

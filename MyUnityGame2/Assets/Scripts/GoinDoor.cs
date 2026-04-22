@@ -4,29 +4,20 @@ using UnityEngine;
 
 public class GoinDoor : MonoBehaviour
 {
-    public Vector3 teleport;
-
-    public bool playerclose;
-
-    public KeyCode F = KeyCode.F;
-
-    public GameObject play;
-    void Start()
-    {
-        
-    }
-    void Update()
-    {
-        if (playerclose && Input.GetKeyDown(F))
-        {
-            play.transform.position = teleport;
-        }
-    }
+    public int Doorkey;
+    public movement move;
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Detector"))
+        if(collision.gameObject.CompareTag("Player"))
         {
-            playerclose = true;
+            move.doornumb = Doorkey;
+        }
+    }
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            move.doornumb = 0;
         }
     }
 }
