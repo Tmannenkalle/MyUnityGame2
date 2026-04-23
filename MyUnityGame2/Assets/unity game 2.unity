@@ -22935,7 +22935,7 @@ MonoBehaviour:
   doornumb: 0
   F: 102
   Movestop: 0
-  del: 1000
+  del: 1.4
 --- !u!61 &475941026
 BoxCollider2D:
   m_ObjectHideFlags: 0
