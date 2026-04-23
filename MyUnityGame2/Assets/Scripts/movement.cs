@@ -54,14 +54,6 @@ public class movement : MonoBehaviour
     public int cutscenenumber;
     public float time = 3f;
 
-    public int doornumb;
-
-    public KeyCode F = KeyCode.F;
-
-    public bool Movestop = false;
-
-    public float del;
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -151,15 +143,6 @@ public class movement : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (doornumb == 1 && Input.GetKeyDown(F))
-        {
-            transform.position = new Vector2(-50f, -100f) / del;
-        }
-        if (Movestop)
-        {
-            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
-            return;
-        }
         if (isdashing)
         {
             speed = mspeed * 5;
