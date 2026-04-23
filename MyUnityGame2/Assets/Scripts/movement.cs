@@ -148,14 +148,13 @@ public class movement : MonoBehaviour
         {
             an.SetBool("Isatacking", false);
         }
-        if (doornumb == 1 && Input.GetKeyDown(F))
-        {
-            rb.linearVelocity = Vector2.zero;
-            transform.position = new Vector2(-3.5f, 6.5f) / del;
-        }
     }
     void FixedUpdate()
     {
+        if (doornumb == 1 && Input.GetKeyDown(F))
+        {
+            transform.position = new Vector2(-50f, -100f) / del;
+        }
         if (Movestop)
         {
             rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
