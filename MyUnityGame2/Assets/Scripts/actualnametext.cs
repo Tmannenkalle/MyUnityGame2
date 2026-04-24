@@ -19,6 +19,14 @@ public class actualnametext : MonoBehaviour
         {
             Actualnametext.text = "Old man";
         }
+        if (move.cutscenenumber == 2)
+        {
+            Actualnametext.text = "Player";
+        }
+        if (move.cutscenenumber == 2 && move.time <= -3f)
+        {
+            Actualnametext.text = "Mysterious man";
+        }
 
     }
 }

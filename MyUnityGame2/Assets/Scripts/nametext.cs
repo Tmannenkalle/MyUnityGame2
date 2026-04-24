@@ -47,6 +47,23 @@ public class nametext : MonoBehaviour
             move.jumppower = 0f;
             move.mspeed = 0f;
         }
+        if (move.cutscenenumber == 2)
+        {
+            if (move.time >= -3f)
+            {
+                nametxt.text = "Hi man... Why are there wanted posters all over town \nwith your face on them";            
+            }
+            else if (move.time >= -7f && move.time < -3f)
+                nametxt.text = "uhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh";    
+            else
+                nametxt.text = "YOU'LL NEVER CATCH ME ALIVEEEEEEEEEEEE!!!!!!!!!!!";       
+
+
+            move.speed = 0f;
+            move.jumppower = 0f;
+            move.mspeed = 0f;
+        }
+
     }
 
     void FixedUpdate()
