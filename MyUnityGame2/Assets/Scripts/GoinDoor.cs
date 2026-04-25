@@ -15,12 +15,32 @@ public class GoinDoor : MonoBehaviour
 
     public float del;
 
+    public GameObject wait;
+
+    public float timeforwait;
+
+    void Start()
+    {
+        wait.SetActive(false);
+    }
+
     void Update()
     {
         if (playerclose && Input.GetKeyDown(F))
         {
+            timeforwait = 2.5f;
+            wait.SetActive(true);
             play.transform.position = teleport / del;
         }
+        wait.transform.position = play.transform.position;
+        if (timeforwait >= 0f)
+        {
+            wait.SetActive(false);
+        }
+    }
+    void FixedUpdate()
+    {
+        timeforwait -= Time.fixedDeltaTime;
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
