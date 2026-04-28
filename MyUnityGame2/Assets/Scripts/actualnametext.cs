@@ -27,6 +27,23 @@ public class actualnametext : MonoBehaviour
         {
             Actualnametext.text = "Mysterious man";
         }
+        if (move.cutscenenumber == 3)
+        {
+            Actualnametext.text = "Thief";
+        }
+        if (move.cutscenenumber == 3 && move.time <= -1f)
+        {
+            Actualnametext.text = "Old man";
+        }
+        if (move.cutscenenumber == 3 && move.time <= -5f)
+        {
+            Actualnametext.text = "Thief";
+        }
+        if (move.cutscenenumber == 4)
+        {
+            Actualnametext.text = "Old man";
+            move.haveSword = true;
+        }
 
     }
 }

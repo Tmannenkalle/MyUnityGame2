@@ -63,6 +63,40 @@ public class nametext : MonoBehaviour
             move.jumppower = 0f;
             move.mspeed = 0f;
         }
+        if (move.cutscenenumber == 3)
+        {
+            if (move.time >= -1f)
+            {
+                nametxt.text = "Guys, we can talk about this";            
+            }
+            else if (move.time >= -5f && move.time < -1f)
+                nametxt.text = "Just give the sword back and we'll let you go";    
+            else
+                nametxt.text = "Ok ):";       
+
+
+            move.speed = 0f;
+            move.jumppower = 0f;
+            move.mspeed = 0f;
+        }
+        if (move.cutscenenumber == 4)
+        {
+            if (move.time >= -1f)
+            {
+                nametxt.text = "Thank you so much for the help";            
+            }
+            else if (move.time >= -4f && move.time < -1f)
+                nametxt.text = "Here, take the sword";    
+            else if (move.time >= -8f && move.time < -4f)
+                nametxt.text = "To use it you need to left click";    
+            else if (move.time >= -12f && move.time < -8f)
+                nametxt.text = "Thats about it! Goodbye";
+
+
+            move.speed = 0f;
+            move.jumppower = 0f;
+            move.mspeed = 0f;
+        }
 
     }
 

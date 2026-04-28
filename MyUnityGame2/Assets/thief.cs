@@ -24,5 +24,15 @@ public class MoveRight : MonoBehaviour
                 transform.localPosition = new Vector3(181f, -4.786f, 0f);
             }
         }
+        if (move.cutscenenumber == 3 && move.time <= -8f)
+        {
+            if (move.time >= -11.5f && move.time <= -5f)
+                rb.linearVelocity = new Vector2(speed * -1, rb.linearVelocity.y);
+            else
+            {
+                rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+                transform.localPosition = new Vector3(181f, -400.786f, 0f);
+            }
+        }
     }
 }
