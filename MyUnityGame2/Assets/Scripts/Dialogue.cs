@@ -17,6 +17,10 @@ public class Dialogue : MonoBehaviour
     public KeyCode E = KeyCode.E;
 
     public GameObject panel;
+
+    [SerializeField] private  string nextline;
+
+    [SerializeField] private bool nextlinestart;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,7 +35,16 @@ public class Dialogue : MonoBehaviour
        if (isnearby && Input.GetKeyDown(E))
         {
             panel.SetActive(true);
+            name_place.SetText(name);
+            Text_place.SetText(text);
+            nextlinestart = true;
         }
+        if(Input.GetKeyDown(E) && nextline != "" && nextlinestart)
+            {
+                name_place.SetText(name);
+                Text_place.SetText(nextline);
+                nextlinestart = false;
+            }
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
