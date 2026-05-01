@@ -88793,14 +88793,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   name: Per
-  text: Hei jeg heter per
+  text:
+  - Hei hei
+  - hallo hallo
   name_place: {fileID: 705711348}
   Text_place: {fileID: 1585881114}
   isnearby: 0
   E: 101
   panel: {fileID: 1877761520}
-  nextline: jeg heter fortsatt per
+  lines: 0
+  Howmali: 2
   nextlinestart: 0
+  Endtalk: 0
+  nextlines: Hi HI
 --- !u!212 &1965057652
 SpriteRenderer:
   serializedVersion: 2
