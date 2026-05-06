@@ -19,16 +19,19 @@ public class cutscene : MonoBehaviour
             {
                 move.cutscenetime = 15f;
                 transform.localPosition = new Vector3(-4f, 0f, 0f);
+                move.blocks += 1;
             } 
             if (move.cutscenenumber == 3)
             {
                 move.cutscenetime = 15f;
                 transform.localPosition = new Vector3(-1f, 0f, 0f);
+                move.blocks += 1;
+
             }
             if (move.cutscenenumber == 4)
             {
                 move.cutscenetime = 15f;
-                transform.localPosition = new Vector3(-1f, -10f, 0f);
+                transform.localPosition = new Vector3(-1f, -10f, 0f);    
             }
             cutscene_number += 1;
         }

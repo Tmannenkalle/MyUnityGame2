@@ -42,6 +42,7 @@ public class movement : MonoBehaviour
 
     public SpriteRenderer sr;
     public int coins = 0;
+    public int blocks;
 
     [SerializeField] private Animator an;
     bool iswalking;
