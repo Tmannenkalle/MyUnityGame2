@@ -25467,7 +25467,7 @@ GameObject:
   - component: {fileID: 522720633}
   - component: {fileID: 522720632}
   - component: {fileID: 522720631}
-  - component: {fileID: 522720630}
+  - component: {fileID: 522720635}
   m_Layer: 0
   m_Name: Npc
   m_TagString: Untagged
@@ -25475,22 +25475,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &522720630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 522720629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d166569aafbf741da8044e50f81aa6fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteractionNpc
-  dialogueData: {fileID: 11400000, guid: 36a9e30fac3054365bfa993de201747a, type: 2}
-  dialoguePanel: {fileID: 1877761520}
-  dialougetext: {fileID: 1585881114}
-  nameText: {fileID: 705711348}
 --- !u!50 &522720631
 Rigidbody2D:
   serializedVersion: 5
@@ -25638,6 +25622,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 964803528}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &522720635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522720629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c0f1386995d41eda93b8ac814459d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue
+  name: OK
+  text:
+  - Hi i thought you were dead?
+  name_place: {fileID: 705711348}
+  Text_place: {fileID: 1585881114}
+  isnearby: 0
+  E: 101
+  panel: {fileID: 1877761520}
+  lines: 0
+  Howmali: 0
+  nextlinestart: 0
+  Endtalk: 0
+  nextlines: 
 --- !u!1 &523668474
 GameObject:
   m_ObjectHideFlags: 0
@@ -85771,7 +85780,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1821777746}
   - component: {fileID: 1821777745}
-  - component: {fileID: 1821777748}
   - component: {fileID: 1821777749}
   - component: {fileID: 1821777750}
   - component: {fileID: 1821777751}
@@ -85856,22 +85864,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 964803528}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1821777748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1821777743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d166569aafbf741da8044e50f81aa6fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteractionNpc
-  dialogueData: {fileID: 11400000, guid: ea36e611ca8c04856b7ed8b8413ac944, type: 2}
-  dialoguePanel: {fileID: 1877761520}
-  dialougetext: {fileID: 1585881114}
-  nameText: {fileID: 705711348}
 --- !u!61 &1821777749
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -85954,9 +85946,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1821777743}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7809213eeca9ea4d83f764036c9bbeb, type: 3}
+  m_Script: {fileID: 11500000, guid: 18c0f1386995d41eda93b8ac814459d8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue
+  name: Per
+  text:
+  - Hei
+  name_place: {fileID: 705711348}
+  Text_place: {fileID: 1585881114}
+  isnearby: 0
+  E: 101
+  panel: {fileID: 1877761520}
+  lines: 0
+  Howmali: 0
+  nextlinestart: 0
+  Endtalk: 0
+  nextlines: 
 --- !u!1 &1823414998
 GameObject:
   m_ObjectHideFlags: 0
