@@ -6,6 +6,8 @@ using UnityEngine.Rendering.Universal;
 
 public class movement : MonoBehaviour
 {
+    public GameObject player;
+    public GameObject wait;
     public float speed = 5f;
     public float mspeed = 5f;
     public float jumppower = 8.5f;
@@ -65,7 +67,8 @@ public class movement : MonoBehaviour
             gl = GetComponent<Light2D>();
     }
     void Update()
-    {        
+    {
+        wait.transform.position = player.transform.position;        
         if (stamina < maxstamina && timer > 0.075f)
         {
             stamina += 1;

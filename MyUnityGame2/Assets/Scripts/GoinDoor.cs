@@ -19,6 +19,8 @@ public class GoinDoor : MonoBehaviour
 
     public float timeforwait;
 
+    public bool loading;
+
     void Start()
     {
         wait.SetActive(false);
@@ -28,19 +30,22 @@ public class GoinDoor : MonoBehaviour
     {
         if (playerclose && Input.GetKeyDown(F))
         {
-            timeforwait = 2.5f;
             wait.SetActive(true);
+            loading = true;
+            Time.timeScale = 0f;
+            timeforwait = 2.5f;
             play.transform.position = teleport / del;
         }
-        wait.transform.position = play.transform.position;
-        if (timeforwait >= 0f)
+         if (loading)
         {
-            wait.SetActive(false);
+            timeforwait -= Time.unscaledDeltaTime;
+            if (timeforwait <= 0f)
+            {
+                loading = false;
+                wait.SetActive(false);
+                Time.timeScale = 1f;
+            }
         }
-    }
-    void FixedUpdate()
-    {
-        timeforwait -= Time.fixedDeltaTime;
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
