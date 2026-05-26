@@ -5,7 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 
 public class Dialogue : MonoBehaviour
 {
-    public string name;
+    public string Name;
 
     public string[] text;
 
@@ -47,7 +47,7 @@ public class Dialogue : MonoBehaviour
             return;
         }
             panel.SetActive(true);
-            name_place.SetText(name);
+            name_place.SetText(Name);
             Text_place.SetText(text[lines]);
             lines++;
             return;
