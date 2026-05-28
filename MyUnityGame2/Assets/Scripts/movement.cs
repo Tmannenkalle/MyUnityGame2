@@ -57,6 +57,8 @@ public class movement : MonoBehaviour
     public int cutscenenumber;
     public float time = 3f;
 
+    public CameraFollow fo;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -68,81 +70,84 @@ public class movement : MonoBehaviour
     }
     void Update()
     {
-        wait.transform.position = player.transform.position;        
-        if (stamina < maxstamina && timer > 0.075f)
+        if(fo.started)
         {
-            stamina += 1;
-            timer = 0f;
-        }
-        moveHorizontal = 0f;
-        if (Input.GetKey(left))
-        {
-            moveHorizontal = -1f;
-            iswalking = true;
-            sr.flipX = true;
-        } 
-        else if (Input.GetKey(right))
-        {
-            moveHorizontal = 1f;
-            iswalking = true;
-            sr.flipX = false;
-        }
-        else
-        {
-            iswalking = false;
-        }
-        if (Input.GetKeyDown(up))
-        {
-            
-            if (jumps > 0)
+            wait.transform.position = player.transform.position;        
+            if (stamina < maxstamina && timer > 0.075f)
             {
-                rb.AddForce(new Vector2(0f, jumppower), ForceMode2D.Impulse);
-                jumps -= 1;
-                is_jumping = true;
+                stamina += 1;
+                timer = 0f;
+                }
+            moveHorizontal = 0f;
+            if (Input.GetKey(left))
+                {
+                    moveHorizontal = -1f;
+                    iswalking = true;
+                    sr.flipX = true;
+                } 
+            else if (Input.GetKey(right))
+            {
+                moveHorizontal = 1f;
+                iswalking = true;
+                sr.flipX = false;
             }
+            else
+            {
+                iswalking = false;
+            }
+            if (Input.GetKeyDown(up))
+            {
+                
+                if (jumps > 0)
+                {
+                    rb.AddForce(new Vector2(0f, jumppower), ForceMode2D.Impulse);
+                    jumps -= 1;
+                    is_jumping = true;
+                }
             
             
               
-        }
-        if (Input.GetKeyDown(dash))
-        {
-            if (stamina >= 50f)
-            {
-                isdashing = true;
-                dashtime = maxdashtime;
-                stamina -= 50;
             }
-        }
-        if (health <= 0)
-        {
-            health = 10;
-            losthealth = 0;
-            transform.localPosition = new Vector3(respawnx,respawny,0f);
-        }
-        if (iswalking)
-        {
-            an.SetBool("IsWalking", true);
-        }
-        else if(iswalking == false)
-        {
-            an.SetBool("IsWalking", false);
-        }
-        if (is_jumping)
-        {
-            an.SetBool("IsJumping", true);
-        }
-        else
-        {
-            an.SetBool("IsJumping", false);
-        }
-        if (att.isatack)
-        {
-            Debug.Log(att);
-            an.SetBool("Isatacking", true);
-        }
-        else
-        {
-            an.SetBool("Isatacking", false);
+            if (Input.GetKeyDown(dash))
+            {
+                if (stamina >= 50f)
+                {
+                    isdashing = true;
+                    dashtime = maxdashtime;
+                    stamina -= 50;
+                }
+            }
+            if (health <= 0)
+            {
+                health = 10;
+                losthealth = 0;
+                transform.localPosition = new Vector3(respawnx,respawny,0f);
+            }
+            if (iswalking)
+            {
+                an.SetBool("IsWalking", true);
+            }
+            else if(iswalking == false)
+            {
+                an.SetBool("IsWalking", false);
+            }
+            if (is_jumping)
+            {
+                an.SetBool("IsJumping", true);
+            }
+            else
+            {
+                an.SetBool("IsJumping", false);
+            }
+            if (att.isatack)
+            {
+                Debug.Log(att);
+                an.SetBool("Isatacking", true);
+            }
+            else
+            {
+                an.SetBool("Isatacking", false);
+            }
         }
     }
     void FixedUpdate()
