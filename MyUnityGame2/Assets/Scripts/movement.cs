@@ -250,5 +250,10 @@ public class movement : MonoBehaviour
             coins += 1;
             Destroy(collision.gameObject);
         }
+        if (collision.gameObject.CompareTag("checkpoint"))
+        {
+            health = 10;
+            losthealth = 0;
+        }
     }
 }

@@ -23,6 +23,7 @@ TagManager:
   - OldMan
   - cutscene
   - Detector
+  - checkpoint
   layers:
   - Default
   - TransparentFX
