@@ -56,6 +56,10 @@ public class movement : MonoBehaviour
     public float cutscenetime;
     public int cutscenenumber;
     public float time = 3f;
+    public int apples;
+    public int corruption_fragment;
+    public int slime_juice;
+    public int bat_ears; 
 
     public CameraFollow fo;
 

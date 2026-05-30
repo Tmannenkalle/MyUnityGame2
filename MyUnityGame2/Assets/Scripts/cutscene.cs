@@ -31,7 +31,18 @@ public class cutscene : MonoBehaviour
             if (move.cutscenenumber == 4)
             {
                 move.cutscenetime = 15f;
-                transform.localPosition = new Vector3(-1f, -10f, 0f);    
+                transform.localPosition = new Vector3(390f, -20f, 0f);    
+            }
+            if (move.cutscenenumber == 5)
+            {
+                move.cutscenetime = 28f;
+                transform.localPosition = new Vector3(390f, -20f, 0f);    
+            }
+            if (move.cutscenenumber == 6 && move.bat_ears < 2 && move.apples < 1 && move.slime_juice < 4 && move.corruption_fragment < 1)
+            {
+                move.cutscenetime = 7f;
+                transform.localPosition = new Vector3(390.5f, -20f, 0f); 
+                cutscene_number -= 1;   
             }
             cutscene_number += 1;
         }

@@ -44,6 +44,14 @@ public class actualnametext : MonoBehaviour
             Actualnametext.text = "Old man";
             move.haveSword = true;
         }
+        if (move.cutscenenumber == 5)
+        {
+            Actualnametext.text = "King Kevin";
+        }
+        if (move.cutscenenumber == 6)
+        {
+            Actualnametext.text = "King Kevin";
+        }
 
     }
 }

@@ -97,6 +97,32 @@ public class nametext : MonoBehaviour
             move.jumppower = 0f;
             move.mspeed = 0f;
         }
+        if (move.cutscenenumber == 5)
+        {
+            if (move.time >= 0 && move.time < 3)
+                nametxt.text = "Hello there traveller!";
+            else if (move.time >= -4 && move.time < 0)
+                nametxt.text = "I am the king of Henritlas, and i need your help!";
+            else if (move.time >= -10 && move.time < -4)
+                nametxt.text = "As you might know our Kingdom is under attack by the corrupteds and while fighting them i got poisoned";
+            else if (move.time >= -17 && move.time < -10)
+                nametxt.text = "If you can help the alchemist with the ingredients for the cure, I can get the mage to grant you a special ability";
+            else if (move.time >=  -25 && move.time < -17)
+                nametxt.text = "What I need is: 1 apple, 2 bat ears, 4 slime juice and 1 fragment of corruption. Got it? If you need to be reminded come back and talk to me!";
+            
+            move.speed = 0f;
+            move.jumppower = 0f;
+            move.mspeed = 0f;
+        }
+        if (move.cutscenenumber == 6 && move.bat_ears < 2 && move.apples < 1 && move.slime_juice < 4 && move.corruption_fragment < 1)
+        {
+            if (move.time >= -4 && move.time < 3)
+                nametxt.text = "What I need is: 1 apple, 2 bat ears, 4 slime juice and 1 fragment of corruption.";
+            move.speed = 0f;
+            move.jumppower = 0f;
+            move.mspeed = 0f;
+        }
+
 
     }
 
