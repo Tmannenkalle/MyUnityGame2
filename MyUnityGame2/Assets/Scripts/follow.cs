@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] Transform target;
+    public Transform target;
 
-    [SerializeField] float smoothSpeed = 5f;
-    [SerializeField] float deadZoneY = 2f;
-    [SerializeField] float lookAheadX = 2f;
+    public float smoothSpeed = 5f;
+    public float deadZoneY = 2f;
+    public float lookAheadX = 2f;
 
     public bool started;
     float currentLookAhead;
