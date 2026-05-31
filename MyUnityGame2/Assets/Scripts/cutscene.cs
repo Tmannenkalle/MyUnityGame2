@@ -17,6 +17,7 @@ public class cutscene : MonoBehaviour
             }
             if (move.cutscenenumber == 2)
             {
+
                 move.cutscenetime = 15f;
                 transform.localPosition = new Vector3(-4f, 0f, 0f);
                 move.blocks += 1;
