@@ -60,7 +60,8 @@ public class movement : MonoBehaviour
     public int corruption_fragment;
     public int slime_juice;
     public int bat_ears; 
-
+    public int slimehealth = 50;
+    public int slimelosthealth = 0;
     public CameraFollow fo;
 
     void Start()
