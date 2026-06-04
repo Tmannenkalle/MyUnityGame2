@@ -1,5 +1,8 @@
+using System;
 using System.Security;
 using System.Security.Cryptography;
+using System.Threading;
+using TMPro;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
@@ -17,8 +20,11 @@ public class CameraFollow : MonoBehaviour
 
     public GameObject load2;
 
+    public int intu;
 
     float time;
+
+    public TMP_Text timer_text;
 
     void Start()
     {
@@ -57,13 +63,31 @@ public class CameraFollow : MonoBehaviour
             }
         }
     }
+    void Update()
+    {
+        if(intu == 1)
+        {
+            timer_text.text = time.ToString();
+        }
+        else timer_text.SetText("");
+    }
     public void GetBoolTrue()
     {
         started = true;
     }
     void FixedUpdate()
     {
-        if(started)time -= Time.fixedDeltaTime;
+        if(started)time += Time.fixedDeltaTime;
     }
-
+    public void IntUp()
+    {
+        if(intu < 2)
+        {
+            intu++;
+        }
+        else
+        {
+            intu--;
+        } 
+    }
 }
