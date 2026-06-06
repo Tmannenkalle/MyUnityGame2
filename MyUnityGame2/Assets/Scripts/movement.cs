@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Security.AccessControl;
 using System.Security.Cryptography;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -64,6 +65,8 @@ public class movement : MonoBehaviour
     public int slimelosthealth = 0;
     public CameraFollow fo;
 
+    public TMP_Text timerclock;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -75,6 +78,7 @@ public class movement : MonoBehaviour
     }
     void Update()
     {
+        timerclock.transform.position = transform.position + new Vector3(0.1f, 0.1f);
         if(fo.started)
         {
             wait.transform.position = player.transform.position;        

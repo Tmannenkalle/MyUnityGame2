@@ -28,7 +28,7 @@ public class CameraFollow : MonoBehaviour
 
     void Start()
     {
-        time = 0.3f;
+        intu = 2;
         //load2.SetActive(false);
     }
 
@@ -67,7 +67,7 @@ public class CameraFollow : MonoBehaviour
     {
         if(intu == 1)
         {
-            timer_text.text = time.ToString();
+            timer_text.text = time.ToString("F3");
         }
         else timer_text.SetText("");
     }
