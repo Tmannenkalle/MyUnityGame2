@@ -25,6 +25,8 @@ TagManager:
   - Detector
   - checkpoint
   - slimeking
+  - Button
+  - Button2
   layers:
   - Default
   - TransparentFX
