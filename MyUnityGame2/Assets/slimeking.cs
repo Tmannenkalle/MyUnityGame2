@@ -4,25 +4,24 @@ public class slimeking : MonoBehaviour
 {
     public int hp = 50;
     public movement move;
-    void Start()
-    {
-        
-    }
 
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (hp <= 0)
+        Debug.Log("Something entered: " + collision.name);
+        if (collision.CompareTag("attack"))
         {
-            Destroy(gameObject);
-        }
-    }
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("attack"))
-        {
-            hp -= 1;
-            move.slimelosthealth += 1;
-            move.slimehealth -= 1;
+            hp--;
+
+            if (move != null)
+            {
+                move.slimelosthealth++;
+                move.slimehealth--;
+            }
+
+            if (hp <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
