@@ -1,5 +1,8 @@
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
+using NUnit.Framework;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GoinDoor : MonoBehaviour
@@ -21,6 +24,10 @@ public class GoinDoor : MonoBehaviour
 
     public bool loading;
 
+    public GameObject teleportpath;
+
+    public float timer;
+
     void Start()
     {
         wait.SetActive(false);
@@ -30,21 +37,25 @@ public class GoinDoor : MonoBehaviour
     {
         if (playerclose && Input.GetKeyDown(F))
         {
-            wait.SetActive(true);
             loading = true;
-            Time.timeScale = 0f;
             timeforwait = 2.5f;
-            play.transform.position = teleport / del;
+            timer = 3f;
+            Time.timeScale = 0f;
         }
          if (loading)
         {
             timeforwait -= Time.unscaledDeltaTime;
-            if (timeforwait <= 0f)
+            if (timeforwait <= 1f)
             {
-                loading = false;
-                wait.SetActive(false);
-                Time.timeScale = 1f;
+                play.transform.position = teleportpath.transform.position;
             }
+            if(timeforwait <= 0f)
+            {
+                wait.SetActive(false);
+                loading = false;
+                Time.timeScale = 1f;
+            } 
+            
         }
     }
     void OnTriggerEnter2D(Collider2D collision)
